@@ -1,0 +1,93 @@
+- name: ERGatewayConnectionBitsInPerSecond
+  description: ERGatewayConnectionBitsInPerSecond
+  type: Metric
+  verified: false
+  visible: true
+  tags:
+  - alz
+  properties:
+    metricName: ERGatewayConnectionBitsInPerSecond
+    metricNamespace: Microsoft.Network/expressRouteGateways
+    severity: 0
+    windowSize: PT5M
+    evaluationFrequency: PT5M
+    timeAggregation: Average
+    operator: LessThan
+    threshold: 1
+    criterionType: StaticThresholdCriterion
+    autoMitigate: false
+  references:
+  - name: ExpressRoute Monitoring Metrics Alerts for ExpressRoute Gateways
+    url: https://learn.microsoft.com/en-us/azure/expressroute/expressroute-monitoring-metrics-alerts#expressroute-gateways
+  deployments:
+  - name: Deploy ERG ExpressRoute Bits In Alert
+    template: Deploy-ERG-BitsInPerSecond-Alert.json
+    type: Policy
+    tags:
+    - alz
+    properties:
+      scope: Resource
+      multiResource: false
+  guid: ff147700-c9e6-4063-bb23-45500c00067a
+- name: ERGatewayConnectionBitsOutPerSecond
+  description: Metric Alert for ER Gateway Connection BitsOutPerSecond
+  type: Metric
+  verified: false
+  visible: true
+  tags:
+  - alz
+  properties:
+    metricName: ERGatewayConnectionBitsOutPerSecond
+    metricNamespace: Microsoft.Network/expressRouteGateways
+    severity: 0
+    windowSize: PT5M
+    evaluationFrequency: PT5M
+    timeAggregation: Average
+    operator: LessThan
+    threshold: 1
+    criterionType: StaticThresholdCriterion
+    autoMitigate: false
+  references:
+  - name: ExpressRoute Monitoring Metrics Alerts for ExpressRoute Gateways
+    url: https://learn.microsoft.com/en-us/azure/expressroute/expressroute-monitoring-metrics-alerts#expressroute-gateways
+  deployments:
+  - name: Deploy ERG ExpressRoute Bits Out Alert
+    template: Deploy-ERG-BitsOutPerSecond-Alert.json
+    type: Policy
+    tags:
+    - alz
+    properties:
+      scope: Resource
+      multiResource: false
+  guid: 4d5c7854-e044-4dd6-971b-df433fa3ad37
+- name: ExpressRouteGatewayCpuUtilization
+  description: Metric Alert for ER Gateway Express Route CPU Utilization
+  type: Metric
+  verified: true
+  visible: true
+  tags:
+  - alz
+  properties:
+    metricName: ExpressRouteGatewayCpuUtilization
+    metricNamespace: Microsoft.Network/expressRouteGateways
+    severity: 1
+    windowSize: PT5M
+    evaluationFrequency: PT1M
+    timeAggregation: Average
+    operator: GreaterThan
+    threshold: 80
+    criterionType: StaticThresholdCriterion
+    autoMitigate: false
+  references:
+  - name: ExpressRoute Monitoring Metrics Alerts for ExpressRoute Gateways
+    url: https://learn.microsoft.com/en-us/azure/expressroute/expressroute-monitoring-metrics-alerts#expressroute-gateways
+  deployments:
+  - name: Deploy ERG ExpressRoute CPU Utilization Alert
+    template: Deploy-ERG-CPUUtilization-Alert.json
+    type: Policy
+    tags:
+    - alz
+    properties:
+      scope: Resource
+      multiResource: false
+  guid: af1ba971-9b73-4b7f-8040-5eff9f5778d5
