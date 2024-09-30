@@ -1,7 +1,7 @@
 {
   "type": "Microsoft.Authorization/policyDefinitions",
   "apiVersion": "2021-06-01",
-  "name": "dfd37715-0d5c-4ec5-98ae-836cd626a27f",
+  "name": "Deploy_SqlManagedInstances_AvgCpuPercent_Alert",
   "properties": {
     "policyType": "Custom",
     "mode": "All",

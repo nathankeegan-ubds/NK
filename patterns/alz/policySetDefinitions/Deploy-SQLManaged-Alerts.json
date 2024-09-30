@@ -1,0 +1,287 @@
+{
+  "type": "Microsoft.Authorization/policySetDefinitions",
+  "apiVersion": "2021-06-01",
+  "name": "Alerting-SQLManaged",
+  "properties": {
+    "displayName": "Deploy Azure Monitor Baseline Alerts for SQL Managed Instances",
+    "description": "This initiative deploys Azure Monitor Baseline Alerts to monitor SQL Managed Instances.",
+    "metadata": {
+      "version": "1.0.0",
+      "category": "Monitoring",
+      "source": "https://github.com/Azure/azure-monitor-baseline-alerts/",
+      "alzCloudEnvironments": [
+        "AzureCloud"
+      ],
+      "_deployed_by_amba": true
+    },
+    "parameters": {
+      "SqlManagedInstancesAvgCpuPercentAlertSeverity": {
+        "type": "String",
+        "defaultValue": "1",
+        "allowedValues": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "metadata": {
+          "displayName": "Storage Account Availability Alert Severity",
+          "description": "Severity of the alert for Storage Account Availability"
+        }
+      },
+      "SqlManagedInstancesAvgCpuPercentWindowSize": {
+        "type": "string",
+        "defaultValue": "PT5M",
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H",
+          "PT6H",
+          "PT12H",
+          "P1D"
+        ],
+        "metadata": {
+          "displayName": "Storage Account Availability Window Size",
+          "description": "Window size for the alert"
+        }
+      },
+      "SqlManagedInstancesAvgCpuPercentMitigate": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Auto Mitigate",
+          "description": "Auto Mitigate for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlManagedInstancesAvgCpuPercentFrequency": {
+        "type": "string",
+        "defaultValue": "PT5M",
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H"
+        ],
+        "metadata": {
+          "displayName": "Storage Account Availability Evaluation Frequency",
+          "description": "Evaluation frequency for the alert"
+        }
+      },
+      "SqlManagedInstancesAvgCpuPercentPolicyEffect": {
+        "type": "string",
+        "defaultValue": "deployIfNotExists",
+        "allowedValues": [
+          "deployIfNotExists",
+          "disabled"
+        ],
+        "metadata": {
+          "displayName": "Storage Account Availability Policy Effect",
+          "description": "Policy effect for the alert, deployIfNotExists will deploy the alert if it does not exist"
+        }
+      },
+      "SqlManagedInstancesAvgCpuPercentAlertState": {
+        "type": "string",
+        "defaultValue": "true",
+        "metadata": {
+          "displayName": "Storage Account Availability Alert State",
+          "description": "Alert state for the alert"
+        }
+      },
+      "SqlManagedInstancesAvgCpuPercentThreshold": {
+        "type": "string",
+        "defaultValue": "90",
+        "metadata": {
+          "displayName": "Storage Account Availability Threshold",
+          "description": "Threshold for the alert"
+        }
+      },
+      "SqlManagedInstancesStorageSpaceUsedMbAlertSeverity": {
+        "type": "String",
+        "defaultValue": "1",
+        "allowedValues": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "metadata": {
+          "displayName": "Storage Account Availability Alert Severity",
+          "description": "Severity of the alert for Storage Account Availability"
+        }
+      },
+      "SqlManagedInstancesStorageSpaceUsedMbWindowSize": {
+        "type": "string",
+        "defaultValue": "PT5M",
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H",
+          "PT6H",
+          "PT12H",
+          "P1D"
+        ],
+        "metadata": {
+          "displayName": "Storage Account Availability Window Size",
+          "description": "Window size for the alert"
+        }
+      },
+      "SqlManagedInstancesStorageSpaceUsedMbMitigate": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Auto Mitigate",
+          "description": "Auto Mitigate for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlManagedInstancesStorageSpaceUsedMbFrequency": {
+        "type": "string",
+        "defaultValue": "PT5M",
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H"
+        ],
+        "metadata": {
+          "displayName": "Storage Account Availability Evaluation Frequency",
+          "description": "Evaluation frequency for the alert"
+        }
+      },
+      "SqlManagedInstancesStorageSpaceUsedMbPolicyEffect": {
+        "type": "string",
+        "defaultValue": "deployIfNotExists",
+        "allowedValues": [
+          "deployIfNotExists",
+          "disabled"
+        ],
+        "metadata": {
+          "displayName": "Storage Account Availability Policy Effect",
+          "description": "Policy effect for the alert, deployIfNotExists will deploy the alert if it does not exist"
+        }
+      },
+      "SqlManagedInstancesStorageSpaceUsedMbAlertState": {
+        "type": "string",
+        "defaultValue": "true",
+        "metadata": {
+          "displayName": "Storage Account Availability Alert State",
+          "description": "Alert state for the alert"
+        }
+      },
+      "SqlManagedInstancesStorageSpaceUsedMbThreshold": {
+        "type": "string",
+        "defaultValue": "90",
+        "metadata": {
+          "displayName": "Storage Account Availability Threshold",
+          "description": "Threshold for the alert"
+        }
+      },
+      "ALZMonitorDisableTagName": {
+        "type": "String",
+        "metadata": {
+          "displayName": "ALZ Monitoring disabled tag name",
+          "description": "Tag name used to disable monitoring at the resource level. Set to true if monitoring should be disabled."
+        },
+        "defaultValue": "MonitorDisable"
+      },
+      "ALZMonitorDisableTagValues": {
+        "type": "Array",
+        "metadata": {
+          "displayName": "ALZ Monitoring disabled tag values(s)",
+          "description": "Tag value(s) used to disable monitoring at the resource level. Set to true if monitoring should be disabled."
+        },
+        "defaultValue": [
+          "true",
+          "Test",
+          "Dev",
+          "Sandbox"
+        ]
+      }
+    },
+    "policyDefinitions": [
+      {
+        "policyDefinitionReferenceId": "ALZ_SqlManagedInstancesAvgCpuPercentAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlManagedInstances_AvgCpuPercent_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlManagedInstancesAvgCpuPercentAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlManagedInstancesAvgCpuPercentWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlManagedInstancesAvgCpuPercentFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlManagedInstancesAvgCpuPercentMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlManagedInstancesAvgCpuPercentAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlManagedInstancesAvgCpuPercentThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlManagedInstancesAvgCpuPercentPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_SqlManagedInstancesStorageSpaceUsedMbAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlManagedInstances_StorageSpaceUsedMb_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      }
+    ],
+    "policyType": "Custom",
+    "policyDefinitionGroups": null
+  }
+}

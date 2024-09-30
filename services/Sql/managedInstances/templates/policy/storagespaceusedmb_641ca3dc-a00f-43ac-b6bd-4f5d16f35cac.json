@@ -1,7 +1,7 @@
 {
   "type": "Microsoft.Authorization/policyDefinitions",
   "apiVersion": "2021-06-01",
-  "name": "641ca3dc-a00f-43ac-b6bd-4f5d16f35cac",
+  "name": "Deploy_SqlManagedInstances_StorageSpaceUsedMb_Alert",
   "properties": {
     "policyType": "Custom",
     "mode": "All",
