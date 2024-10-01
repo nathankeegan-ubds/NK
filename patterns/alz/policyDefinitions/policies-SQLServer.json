@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.30.23.60470",
-      "templateHash": "5026840741397217039"
+      "templateHash": "12745433480120788997"
     }
   },
   "parameters": {
@@ -3188,8 +3188,8 @@
               "enabled": {
                 "value": "[[[parameters('SqlServersDatabasesConnectionFailedUserErrorAlertState')]"
               },
-              "alertSensitivity": {
-                "value": "[[[parameters('SqlServersDatabasesConnectionSuccessfulAlertSensitvity')]"
+              "threshold": {
+                "value": "[[[parameters('SqlServersDatabasesConnectionFailedUserErrorThreshold')]"
               },
               "effect": {
                 "value": "[[[parameters('SqlServersDatabasesConnectionFailedUserErrorPolicyEffect')]"
@@ -3221,8 +3221,8 @@
               "enabled": {
                 "value": "[[[parameters('SqlServersDatabasesConnectionSuccessfulAlertState')]"
               },
-              "threshold": {
-                "value": "[[[parameters('SqlServersDatabasesConnectionSuccessfulThreshold')]"
+              "alertSensitivity": {
+                "value": "[[[parameters('SqlServersDatabasesConnectionSuccessfulAlertSensitvity')]"
               },
               "effect": {
                 "value": "[[[parameters('SqlServersDatabasesConnectionSuccessfulPolicyEffect')]"
