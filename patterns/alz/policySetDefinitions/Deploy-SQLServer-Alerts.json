@@ -1,10 +1,10 @@
 {
   "type": "Microsoft.Authorization/policySetDefinitions",
   "apiVersion": "2021-06-01",
-  "name": "Alerting-SQLManaged",
+  "name": "Alerting-SQLServer",
   "properties": {
-    "displayName": "Deploy Azure Monitor Baseline Alerts for SQL Managed Instances",
-    "description": "This initiative deploys Azure Monitor Baseline Alerts to monitor SQL Managed Instances.",
+    "displayName": "Deploy Azure Monitor Baseline Alerts for SQL Server",
+    "description": "This initiative deploys Azure Monitor Baseline Alerts to monitor SQL Server Databases and Elastic Pools.",
     "metadata": {
       "version": "1.0.0",
       "category": "Monitoring",
@@ -15,182 +15,6 @@
       "_deployed_by_amba": true
     },
     "parameters": {
-      "SqlManagedInstancesAvgCpuPercentAlertSeverity": {
-        "type": "String",
-        "defaultValue": "1",
-        "allowedValues": [
-          "0",
-          "1",
-          "2",
-          "3",
-          "4"
-        ],
-        "metadata": {
-          "displayName": "Storage Account Availability Alert Severity",
-          "description": "Severity of the alert for Storage Account Availability"
-        }
-      },
-      "SqlManagedInstancesAvgCpuPercentWindowSize": {
-        "type": "string",
-        "defaultValue": "PT5M",
-        "allowedValues": [
-          "PT1M",
-          "PT5M",
-          "PT15M",
-          "PT30M",
-          "PT1H",
-          "PT6H",
-          "PT12H",
-          "P1D"
-        ],
-        "metadata": {
-          "displayName": "Storage Account Availability Window Size",
-          "description": "Window size for the alert"
-        }
-      },
-      "SqlManagedInstancesAvgCpuPercentMitigate": {
-        "type": "String",
-        "metadata": {
-          "displayName": "Auto Mitigate",
-          "description": "Auto Mitigate for the alert"
-        },
-        "allowedValues": [
-          "true",
-          "false"
-        ],
-        "defaultValue": "true"
-      },
-      "SqlManagedInstancesAvgCpuPercentFrequency": {
-        "type": "string",
-        "defaultValue": "PT5M",
-        "allowedValues": [
-          "PT1M",
-          "PT5M",
-          "PT15M",
-          "PT30M",
-          "PT1H"
-        ],
-        "metadata": {
-          "displayName": "Storage Account Availability Evaluation Frequency",
-          "description": "Evaluation frequency for the alert"
-        }
-      },
-      "SqlManagedInstancesAvgCpuPercentPolicyEffect": {
-        "type": "string",
-        "defaultValue": "deployIfNotExists",
-        "allowedValues": [
-          "deployIfNotExists",
-          "disabled"
-        ],
-        "metadata": {
-          "displayName": "Storage Account Availability Policy Effect",
-          "description": "Policy effect for the alert, deployIfNotExists will deploy the alert if it does not exist"
-        }
-      },
-      "SqlManagedInstancesAvgCpuPercentAlertState": {
-        "type": "string",
-        "defaultValue": "true",
-        "metadata": {
-          "displayName": "Storage Account Availability Alert State",
-          "description": "Alert state for the alert"
-        }
-      },
-      "SqlManagedInstancesAvgCpuPercentThreshold": {
-        "type": "string",
-        "defaultValue": "90",
-        "metadata": {
-          "displayName": "Storage Account Availability Threshold",
-          "description": "Threshold for the alert"
-        }
-      },
-      "SqlManagedInstancesStorageSpaceUsedMbAlertSeverity": {
-        "type": "String",
-        "defaultValue": "1",
-        "allowedValues": [
-          "0",
-          "1",
-          "2",
-          "3",
-          "4"
-        ],
-        "metadata": {
-          "displayName": "Storage Account Availability Alert Severity",
-          "description": "Severity of the alert for Storage Account Availability"
-        }
-      },
-      "SqlManagedInstancesStorageSpaceUsedMbWindowSize": {
-        "type": "string",
-        "defaultValue": "PT5M",
-        "allowedValues": [
-          "PT1M",
-          "PT5M",
-          "PT15M",
-          "PT30M",
-          "PT1H",
-          "PT6H",
-          "PT12H",
-          "P1D"
-        ],
-        "metadata": {
-          "displayName": "Storage Account Availability Window Size",
-          "description": "Window size for the alert"
-        }
-      },
-      "SqlManagedInstancesStorageSpaceUsedMbMitigate": {
-        "type": "String",
-        "metadata": {
-          "displayName": "Auto Mitigate",
-          "description": "Auto Mitigate for the alert"
-        },
-        "allowedValues": [
-          "true",
-          "false"
-        ],
-        "defaultValue": "true"
-      },
-      "SqlManagedInstancesStorageSpaceUsedMbFrequency": {
-        "type": "string",
-        "defaultValue": "PT5M",
-        "allowedValues": [
-          "PT1M",
-          "PT5M",
-          "PT15M",
-          "PT30M",
-          "PT1H"
-        ],
-        "metadata": {
-          "displayName": "Storage Account Availability Evaluation Frequency",
-          "description": "Evaluation frequency for the alert"
-        }
-      },
-      "SqlManagedInstancesStorageSpaceUsedMbPolicyEffect": {
-        "type": "string",
-        "defaultValue": "deployIfNotExists",
-        "allowedValues": [
-          "deployIfNotExists",
-          "disabled"
-        ],
-        "metadata": {
-          "displayName": "Storage Account Availability Policy Effect",
-          "description": "Policy effect for the alert, deployIfNotExists will deploy the alert if it does not exist"
-        }
-      },
-      "SqlManagedInstancesStorageSpaceUsedMbAlertState": {
-        "type": "string",
-        "defaultValue": "true",
-        "metadata": {
-          "displayName": "Storage Account Availability Alert State",
-          "description": "Alert state for the alert"
-        }
-      },
-      "SqlManagedInstancesStorageSpaceUsedMbThreshold": {
-        "type": "string",
-        "defaultValue": "90",
-        "metadata": {
-          "displayName": "Storage Account Availability Threshold",
-          "description": "Threshold for the alert"
-        }
-      },
       "ALZMonitorDisableTagName": {
         "type": "String",
         "metadata": {
@@ -211,12 +35,2175 @@
           "Dev",
           "Sandbox"
         ]
+      },
+      "SqlServersDatabasesCpuPercentAlertSeverity": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Severity",
+          "description": "Severity of the Alert"
+        },
+        "allowedValues": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "defaultValue": "2"
+      },
+      "SqlServersDatabasesCpuPercentWindowSize": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Window Size",
+          "description": "Window size for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H",
+          "PT6H",
+          "PT12H",
+          "P1D"
+        ],
+        "defaultValue": "PT5M"
+      },
+      "SqlServersDatabasesCpuPercentFrequency": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Evaluation Frequency",
+          "description": "Evaluation frequency for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H"
+        ],
+        "defaultValue": "PT1M"
+      },
+      "SqlServersDatabasesCpuPercentMitigate": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Auto Mitigate",
+          "description": "Auto Mitigate for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesCpuPercentAlertState": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Alert State",
+          "description": "Alert state for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesCpuPercentThreshold": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Threshold",
+          "description": "Threshold for the alert"
+        },
+        "defaultValue": "80"
+      },      
+      "SqlServersDatabasesCpuPercentPolicyEffect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Effect of the policy"
+        },
+        "allowedValues": [
+          "deployIfNotExists",
+          "disabled"
+        ],
+        "defaultValue": "deployIfNotExists"
+      },
+      "SqlServersDatabasesMemoryPercentAlertSeverity": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Severity",
+          "description": "Severity of the Alert"
+        },
+        "allowedValues": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "defaultValue": "3"
+      },
+      "SqlServersDatabasesMemoryPercentWindowSize": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Window Size",
+          "description": "Window size for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H",
+          "PT6H",
+          "PT12H",
+          "P1D"
+        ],
+        "defaultValue": "PT5M"
+      },
+      "SqlServersDatabasesMemoryPercentFrequency": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Evaluation Frequency",
+          "description": "Evaluation frequency for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H"
+        ],
+        "defaultValue": "PT1M"
+      },
+      "SqlServersDatabasesMemoryPercentMitigate": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Auto Mitigate",
+          "description": "Auto Mitigate for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesMemoryPercentAlertState": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Alert State",
+          "description": "Alert state for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesMemoryPercentThreshold": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Threshold",
+          "description": "Threshold for the alert"
+        },
+        "defaultValue": "90"
+      },      
+      "SqlServersDatabasesMemoryPercentPolicyEffect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Effect of the policy"
+        },
+        "allowedValues": [
+          "deployIfNotExists",
+          "disabled"
+        ],
+        "defaultValue": "deployIfNotExists"
+      },
+      "SqlServersDatabasesBlockedByFirewallAlertSeverity": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Severity",
+          "description": "Severity of the Alert"
+        },
+        "allowedValues": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "defaultValue": "2"
+      },
+      "SqlServersDatabasesBlockedByFirewallWindowSize": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Window Size",
+          "description": "Window size for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H",
+          "PT6H",
+          "PT12H",
+          "P1D"
+        ],
+        "defaultValue": "PT5M"
+      },
+      "SqlServersDatabasesBlockedByFirewallFrequency": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Evaluation Frequency",
+          "description": "Evaluation frequency for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H"
+        ],
+        "defaultValue": "PT5M"
+      },
+      "SqlServersDatabasesBlockedByFirewallMitigate": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Auto Mitigate",
+          "description": "Auto Mitigate for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesBlockedByFirewallAlertState": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Alert State",
+          "description": "Alert state for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesBlockedByFirewallThreshold": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Threshold",
+          "description": "Threshold for the alert"
+        },
+        "defaultValue": "5"
+      },      
+      "SqlServersDatabasesBlockedByFirewallPolicyEffect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Effect of the policy"
+        },
+        "allowedValues": [
+          "deployIfNotExists",
+          "disabled"
+        ],
+        "defaultValue": "deployIfNotExists"
+      },
+      "SqlServersDatabasesConnectionFailedAlertSeverity": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Severity",
+          "description": "Severity of the Alert"
+        },
+        "allowedValues": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "defaultValue": "3"
+      },
+      "SqlServersDatabasesConnectionFailedWindowSize": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Window Size",
+          "description": "Window size for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H",
+          "PT6H",
+          "PT12H",
+          "P1D"
+        ],
+        "defaultValue": "PT5M"
+      },
+      "SqlServersDatabasesConnectionFailedFrequency": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Evaluation Frequency",
+          "description": "Evaluation frequency for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H"
+        ],
+        "defaultValue": "PT1M"
+      },
+      "SqlServersDatabasesConnectionFailedMitigate": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Auto Mitigate",
+          "description": "Auto Mitigate for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesConnectionFailedAlertState": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Alert State",
+          "description": "Alert state for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesConnectionFailedThreshold": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Threshold",
+          "description": "Threshold for the alert"
+        },
+        "defaultValue": "5"
+      },      
+      "SqlServersDatabasesConnectionFailedPolicyEffect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Effect of the policy"
+        },
+        "allowedValues": [
+          "deployIfNotExists",
+          "disabled"
+        ],
+        "defaultValue": "deployIfNotExists"
+      },
+      "SqlServersDatabasesConnectionFailedUserErrorAlertSeverity": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Severity",
+          "description": "Severity of the Alert"
+        },
+        "allowedValues": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "defaultValue": "3"
+      },
+      "SqlServersDatabasesConnectionFailedUserErrorWindowSize": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Window Size",
+          "description": "Window size for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H",
+          "PT6H",
+          "PT12H",
+          "P1D"
+        ],
+        "defaultValue": "PT5M"
+      },
+      "SqlServersDatabasesConnectionFailedUserErrorFrequency": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Evaluation Frequency",
+          "description": "Evaluation frequency for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H"
+        ],
+        "defaultValue": "PT1M"
+      },
+      "SqlServersDatabasesConnectionFailedUserErrorMitigate": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Auto Mitigate",
+          "description": "Auto Mitigate for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesConnectionFailedUserErrorAlertState": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Alert State",
+          "description": "Alert state for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesConnectionFailedUserErrorThreshold": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Threshold",
+          "description": "Threshold for the alert"
+        },
+        "defaultValue": "1"
+      },      
+      "SqlServersDatabasesConnectionFailedUserErrorPolicyEffect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Effect of the policy"
+        },
+        "allowedValues": [
+          "deployIfNotExists",
+          "disabled"
+        ],
+        "defaultValue": "deployIfNotExists"
+      },
+      "SqlServersDatabasesConnectionSuccessfulAlertSeverity":  {
+        "type": "String",
+        "metadata": {
+          "displayName": "Severity",
+          "description": "Severity of the Alert"
+        },
+        "allowedValues": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "defaultValue": "4"
+      },
+      "SqlServersDatabasesConnectionSuccessfulWindowSize": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Window Size",
+          "description": "Window size for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H",
+          "PT6H",
+          "PT12H",
+          "P1D"
+        ],
+        "defaultValue": "PT5M"
+      },
+      "SqlServersDatabasesConnectionSuccessfulFrequency": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Evaluation Frequency",
+          "description": "Evaluation frequency for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H"
+        ],
+        "defaultValue": "PT5M"
+      },
+      "SqlServersDatabasesConnectionSuccessfulMitigate": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Auto Mitigate",
+          "description": "Auto Mitigate for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesConnectionSuccessfulAlertState": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Alert State",
+          "description": "Alert state for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesConnectionSuccessfulAlertSensitvity": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Alert Sensitivity",
+          "description": "Alert Sensitivity for the alert"
+        },
+        "allowedValues": [
+          "Low",
+          "Medium",
+          "High"
+        ],
+        "defaultValue": "Low"
+      },      
+      "SqlServersDatabasesConnectionSuccessfulPolicyEffect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Effect of the policy"
+        },
+        "allowedValues": [
+          "deployIfNotExists",
+          "disabled"
+        ],
+        "defaultValue": "deployIfNotExists"
+      },
+      "SqlServersDatabasesCpuUsedAlertSeverity": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Severity",
+          "description": "Severity of the Alert"
+        },
+        "allowedValues": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "defaultValue": "3"
+      },
+      "SqlServersDatabasesCpuUsedWindowSize": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Window Size",
+          "description": "Window size for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H",
+          "PT6H",
+          "PT12H",
+          "P1D"
+        ],
+        "defaultValue": "PT5M"
+      },
+      "SqlServersDatabasesCpuUsedFrequency": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Evaluation Frequency",
+          "description": "Evaluation frequency for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H"
+        ],
+        "defaultValue": "PT1M"
+      },
+      "SqlServersDatabasesCpuUsedMitigate": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Auto Mitigate",
+          "description": "Auto Mitigate for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesCpuUsedAlertState": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Alert State",
+          "description": "Alert state for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesCpuUsedThreshold": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Threshold",
+          "description": "Threshold for the alert"
+        },
+        "defaultValue": "80"
+      },     
+      "SqlServersDatabasesCpuUsedPolicyEffect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Effect of the policy"
+        },
+        "allowedValues": [
+          "deployIfNotExists",
+          "disabled"
+        ],
+        "defaultValue": "deployIfNotExists"
+      },
+      "SqlServersDatabasesDeadlockAlertSeverity": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Severity",
+          "description": "Severity of the Alert"
+        },
+        "allowedValues": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "defaultValue": "3"
+      },
+      "SqlServersDatabasesDeadlockWindowSize": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Window Size",
+          "description": "Window size for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H",
+          "PT6H",
+          "PT12H",
+          "P1D"
+        ],
+        "defaultValue": "PT5M"
+      },
+      "SqlServersDatabasesDeadlockFrequency": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Evaluation Frequency",
+          "description": "Evaluation frequency for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H"
+        ],
+        "defaultValue": "PT1M"
+      },
+      "SqlServersDatabasesDeadlockMitigate": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Auto Mitigate",
+          "description": "Auto Mitigate for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesDeadlockAlertState": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Alert State",
+          "description": "Alert state for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesDeadlockThreshold": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Threshold",
+          "description": "Threshold for the alert"
+        },
+        "defaultValue": "1"
+      },     
+      "SqlServersDatabasesDeadlockPolicyEffect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Effect of the policy"
+        },
+        "allowedValues": [
+          "deployIfNotExists",
+          "disabled"
+        ],
+        "defaultValue": "deployIfNotExists"
+      },
+      "SqlServersDatabasesDtuLimitAlertSeverity": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Severity",
+          "description": "Severity of the Alert"
+        },
+        "allowedValues": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "defaultValue": "2"
+      },
+      "SqlServersDatabasesDtuLimitWindowSize": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Window Size",
+          "description": "Window size for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H",
+          "PT6H",
+          "PT12H",
+          "P1D"
+        ],
+        "defaultValue": "PT5M"
+      },
+      "SqlServersDatabasesDtuLimitFrequency": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Evaluation Frequency",
+          "description": "Evaluation frequency for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H"
+        ],
+        "defaultValue": "PT5M"
+      },
+      "SqlServersDatabasesDtuLimitMitigate": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Auto Mitigate",
+          "description": "Auto Mitigate for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesDtuLimitAlertState": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Alert State",
+          "description": "Alert state for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesDtuLimitThreshold": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Threshold",
+          "description": "Threshold for the alert"
+        },
+        "defaultValue": "100"
+      },     
+      "SqlServersDatabasesDtuLimitPolicyEffect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Effect of the policy"
+        },
+        "allowedValues": [
+          "deployIfNotExists",
+          "disabled"
+        ],
+        "defaultValue": "deployIfNotExists"
+      },
+      "SqlServersDatabasesDtuUsedAlertSeverity": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Severity",
+          "description": "Severity of the Alert"
+        },
+        "allowedValues": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "defaultValue": "3"
+      },
+      "SqlServersDatabasesDtuUsedWindowSize": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Window Size",
+          "description": "Window size for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H",
+          "PT6H",
+          "PT12H",
+          "P1D"
+        ],
+        "defaultValue": "PT5M"
+      },
+      "SqlServersDatabasesDtuUsedFrequency": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Evaluation Frequency",
+          "description": "Evaluation frequency for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H"
+        ],
+        "defaultValue": "PT5M"
+      },
+      "SqlServersDatabasesDtuUsedMitigate": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Auto Mitigate",
+          "description": "Auto Mitigate for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesDtuUsedAlertState": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Alert State",
+          "description": "Alert state for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesDtuUsedThreshold": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Threshold",
+          "description": "Threshold for the alert"
+        },
+        "defaultValue": "80"
+      },     
+      "SqlServersDatabasesDtuUsedPolicyEffect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Effect of the policy"
+        },
+        "allowedValues": [
+          "deployIfNotExists",
+          "disabled"
+        ],
+        "defaultValue": "deployIfNotExists"
+      },
+      "SqlServersDatabasesDtuConsumptionPercentAlertSeverity": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Severity",
+          "description": "Severity of the Alert"
+        },
+        "allowedValues": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "defaultValue": "3"
+      },
+      "SqlServersDatabasesDtuConsumptionPercentWindowSize": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Window Size",
+          "description": "Window size for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H",
+          "PT6H",
+          "PT12H",
+          "P1D"
+        ],
+        "defaultValue": "PT5M"
+      },
+      "SqlServersDatabasesDtuConsumptionPercentFrequency": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Evaluation Frequency",
+          "description": "Evaluation frequency for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H"
+        ],
+        "defaultValue": "PT1M"
+      },
+      "SqlServersDatabasesDtuConsumptionPercentMitigate": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Auto Mitigate",
+          "description": "Auto Mitigate for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesDtuConsumptionPercentAlertState": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Alert State",
+          "description": "Alert state for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesDtuConsumptionPercentThreshold": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Threshold",
+          "description": "Threshold for the alert"
+        },
+        "defaultValue": "95"
+      },     
+      "SqlServersDatabasesDtuConsumptionPercentPolicyEffect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Effect of the policy"
+        },
+        "allowedValues": [
+          "deployIfNotExists",
+          "disabled"
+        ],
+        "defaultValue": "deployIfNotExists"
+      },
+      "SqlServersDatabasesMemoryUsagePercentAlertSeverity": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Severity",
+          "description": "Severity of the Alert"
+        },
+        "allowedValues": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "defaultValue": "2"
+      },
+      "SqlServersDatabasesMemoryUsagePercentWindowSize": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Window Size",
+          "description": "Window size for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H",
+          "PT6H",
+          "PT12H",
+          "P1D"
+        ],
+        "defaultValue": "PT5M"
+      },
+      "SqlServersDatabasesMemoryUsagePercentFrequency": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Evaluation Frequency",
+          "description": "Evaluation frequency for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H"
+        ],
+        "defaultValue": "PT1M"
+      },
+      "SqlServersDatabasesMemoryUsagePercentMitigate": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Auto Mitigate",
+          "description": "Auto Mitigate for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesMemoryUsagePercentAlertState": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Alert State",
+          "description": "Alert state for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesMemoryUsagePercentThreshold": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Threshold",
+          "description": "Threshold for the alert"
+        },
+        "defaultValue": "90"
+      },     
+      "SqlServersDatabasesMemoryUsagePercentPolicyEffect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Effect of the policy"
+        },
+        "allowedValues": [
+          "deployIfNotExists",
+          "disabled"
+        ],
+        "defaultValue": "deployIfNotExists"
+      },
+      "SqlServersDatabasesSessionsCountAlertSeverity": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Severity",
+          "description": "Severity of the Alert"
+        },
+        "allowedValues": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "defaultValue": "0"
+      },
+      "SqlServersDatabasesSessionsCountWindowSize": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Window Size",
+          "description": "Window size for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H",
+          "PT6H",
+          "PT12H",
+          "P1D"
+        ],
+        "defaultValue": "PT5M"
+      },
+      "SqlServersDatabasesSessionsCountFrequency": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Evaluation Frequency",
+          "description": "Evaluation frequency for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H"
+        ],
+        "defaultValue": "PT5M"
+      },
+      "SqlServersDatabasesSessionsCountMitigate": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Auto Mitigate",
+          "description": "Auto Mitigate for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesSessionsCountAlertState": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Alert State",
+          "description": "Alert state for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesSessionsCountThreshold": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Threshold",
+          "description": "Threshold for the alert"
+        },
+        "defaultValue": "0.5"
+      },     
+      "SqlServersDatabasesSessionsCountPolicyEffect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Effect of the policy"
+        },
+        "allowedValues": [
+          "deployIfNotExists",
+          "disabled"
+        ],
+        "defaultValue": "deployIfNotExists"
+      },
+      "SqlServersDatabasesSqlInstanceCpuPercentAlertSeverity": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Severity",
+          "description": "Severity of the Alert"
+        },
+        "allowedValues": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "defaultValue": "3"
+      },
+      "SqlServersDatabasesSqlInstanceCpuPercentWindowSize": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Window Size",
+          "description": "Window size for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H",
+          "PT6H",
+          "PT12H",
+          "P1D"
+        ],
+        "defaultValue": "PT15M"
+      },
+      "SqlServersDatabasesSqlInstanceCpuPercentFrequency": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Evaluation Frequency",
+          "description": "Evaluation frequency for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H"
+        ],
+        "defaultValue": "PT5M"
+      },
+      "SqlServersDatabasesSqlInstanceCpuPercentMitigate": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Auto Mitigate",
+          "description": "Auto Mitigate for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesSqlInstanceCpuPercentAlertState": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Alert State",
+          "description": "Alert state for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesSqlInstanceCpuPercentThreshold": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Threshold",
+          "description": "Threshold for the alert"
+        },
+        "defaultValue": "70"
+      },     
+      "SqlServersDatabasesSqlInstanceCpuPercentPolicyEffect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Effect of the policy"
+        },
+        "allowedValues": [
+          "deployIfNotExists",
+          "disabled"
+        ],
+        "defaultValue": "deployIfNotExists"
+      },
+      "SqlServersDatabasesSqlInstanceMemoryPercentAlertSeverity": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Severity",
+          "description": "Severity of the Alert"
+        },
+        "allowedValues": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "defaultValue": "3"
+      },
+      "SqlServersDatabasesSqlInstanceMemoryPercentWindowSize": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Window Size",
+          "description": "Window size for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H",
+          "PT6H",
+          "PT12H",
+          "P1D"
+        ],
+        "defaultValue": "PT5M"
+      },
+      "SqlServersDatabasesSqlInstanceMemoryPercentFrequency": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Evaluation Frequency",
+          "description": "Evaluation frequency for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H"
+        ],
+        "defaultValue": "PT5M"
+      },
+      "SqlServersDatabasesSqlInstanceMemoryPercentMitigate": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Auto Mitigate",
+          "description": "Auto Mitigate for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesSqlInstanceMemoryPercentAlertState": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Alert State",
+          "description": "Alert state for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesSqlInstanceMemoryPercentThreshold": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Threshold",
+          "description": "Threshold for the alert"
+        },
+        "defaultValue": "90"
+      },     
+      "SqlServersDatabasesSqlInstanceMemoryPercentPolicyEffect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Effect of the policy"
+        },
+        "allowedValues": [
+          "deployIfNotExists",
+          "disabled"
+        ],
+        "defaultValue": "deployIfNotExists"
+      },
+      "SqlServersDatabasesStorageAlertSeverity": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Severity",
+          "description": "Severity of the Alert"
+        },
+        "allowedValues": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "defaultValue": "3"
+      },
+      "SqlServersDatabasesStorageWindowSize": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Window Size",
+          "description": "Window size for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H",
+          "PT6H",
+          "PT12H",
+          "P1D"
+        ],
+        "defaultValue": "PT5M"
+      },
+      "SqlServersDatabasesStorageFrequency": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Evaluation Frequency",
+          "description": "Evaluation frequency for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H"
+        ],
+        "defaultValue": "PT5M"
+      },
+      "SqlServersDatabasesStorageMitigate": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Auto Mitigate",
+          "description": "Auto Mitigate for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesStorageAlertState": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Alert State",
+          "description": "Alert state for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesStorageThreshold": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Threshold",
+          "description": "Threshold for the alert"
+        },
+        "defaultValue": "934584883610"
+      },     
+      "SqlServersDatabasesStoragePolicyEffect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Effect of the policy"
+        },
+        "allowedValues": [
+          "deployIfNotExists",
+          "disabled"
+        ],
+        "defaultValue": "deployIfNotExists"
+      },
+      "SqlServersDatabasesTempDbDataSizeAlertSeverity": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Severity",
+          "description": "Severity of the Alert"
+        },
+        "allowedValues": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "defaultValue": "3"
+      },
+      "SqlServersDatabasesTempDbDataSizeWindowSize": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Window Size",
+          "description": "Window size for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H",
+          "PT6H",
+          "PT12H",
+          "P1D"
+        ],
+        "defaultValue": "PT15M"
+      },
+      "SqlServersDatabasesTempDbDataSizeFrequency": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Evaluation Frequency",
+          "description": "Evaluation frequency for the alert"
+        },
+        "allowedValues": [
+          "PT1M",
+          "PT5M",
+          "PT15M",
+          "PT30M",
+          "PT1H"
+        ],
+        "defaultValue": "PT5M"
+      },
+      "SqlServersDatabasesTempDbDataSizeMitigate": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Auto Mitigate",
+          "description": "Auto Mitigate for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesTempDbDataSizeAlertState": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Alert State",
+          "description": "Alert state for the alert"
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
+      },
+      "SqlServersDatabasesTempDbDataSizeThreshold": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Threshold",
+          "description": "Threshold for the alert"
+        },
+        "defaultValue": "80"
+      },     
+      "SqlServersDatabasesTempDbDataSizePolicyEffect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Effect of the policy"
+        },
+        "allowedValues": [
+          "deployIfNotExists",
+          "disabled"
+        ],
+        "defaultValue": "deployIfNotExists"
       }
     },
     "policyDefinitions": [
       {
-        "policyDefinitionReferenceId": "ALZ_SqlManagedInstancesAvgCpuPercentAlert",
-        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlManagedInstances_AvgCpuPercent_Alert",
+        "policyDefinitionReferenceId": "ALZ_SqlServersDatabasesCpuPercentAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Databases_CpuPercent_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlServersDatabasesCpuPercentAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlServersDatabasesCpuPercentWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlServersDatabasesCpuPercentFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlServersDatabasesCpuPercentMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlServersDatabasesCpuPercentAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlServersDatabasesCpuPercentThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlServersDatabasesCpuPercentPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersDatabasesMemoryPercentAlert", 
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Databases_MemoryPercent_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlServersDatabasesMemoryPercentAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlServersDatabasesMemoryPercentWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlServersDatabasesMemoryPercentFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlServersDatabasesMemoryPercentMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlServersDatabasesMemoryPercentAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlServersDatabasesMemoryPercentThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlServersDatabasesMemoryPercentPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersDatabasesBlockedByFirewallAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Databases_BlockedByFirewall_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlServersDatabasesBlockedByFirewallAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlServersDatabasesBlockedByFirewallWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlServersDatabasesBlockedByFirewallFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlServersDatabasesBlockedByFirewallMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlServersDatabasesBlockedByFirewallAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlServersDatabasesBlockedByFirewallThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlServersDatabasesBlockedByFirewallPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersDatabasesConnectionFailedAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Databases_ConnectionFailed_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlServersDatabasesConnectionFailedAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlServersDatabasesConnectionFailedWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlServersDatabasesConnectionFailedFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlServersDatabasesConnectionFailedMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlServersDatabasesConnectionFailedAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlServersDatabasesConnectionFailedThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlServersDatabasesConnectionFailedPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersDatabasesConnectionFailedUserErrorAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Databases_ConnectionFailedUserError_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlServersDatabasesConnectionFailedUserErrorAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlServersDatabasesConnectionFailedUserErrorWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlServersDatabasesConnectionFailedUserErrorFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlServersDatabasesConnectionFailedUserErrorMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlServersDatabasesConnectionFailedUserErrorAlertState')]"
+          },
+          "alertSensitivity": {
+            "value": "[[parameters('SqlServersDatabasesConnectionSuccessfulAlertSensitvity')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlServersDatabasesConnectionFailedUserErrorPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersDatabasesConnectionSuccessfulAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Databases_ConnectionSuccessful_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlServersDatabasesConnectionSuccessfulAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlServersDatabasesConnectionSuccessfulWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlServersDatabasesConnectionSuccessfulFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlServersDatabasesConnectionSuccessfulMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlServersDatabasesConnectionSuccessfulAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlServersDatabasesConnectionSuccessfulThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlServersDatabasesConnectionSuccessfulPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersDatabasesCpuUsedAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Databases_CpuUsed_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlServersDatabasesCpuUsedAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlServersDatabasesCpuUsedWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlServersDatabasesCpuUsedFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlServersDatabasesCpuUsedMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlServersDatabasesCpuUsedAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlServersDatabasesCpuUsedThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlServersDatabasesCpuUsedPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersDatabasesDeadlockAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Databases_Deadlock_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlServersDatabasesDeadlockAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlServersDatabasesDeadlockWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlServersDatabasesDeadlockFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlServersDatabasesDeadlockMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlServersDatabasesDeadlockAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlServersDatabasesDeadlockThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlServersDatabasesDeadlockPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersDatabasesDtuLimitAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Databases_DtuLimit_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlServersDatabasesDtuLimitAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlServersDatabasesDtuLimitWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlServersDatabasesDtuLimitFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlServersDatabasesDtuLimitMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlServersDatabasesDtuLimitAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlServersDatabasesDtuLimitThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlServersDatabasesDtuLimitPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersDatabasesDtuUsedAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Databases_DtuUsed_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlServersDatabasesDtuUsedAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlServersDatabasesDtuUsedWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlServersDatabasesDtuUsedFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlServersDatabasesDtuUsedMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlServersDatabasesDtuUsedAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlServersDatabasesDtuUsedThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlServersDatabasesDtuUsedPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersDatabasesDtuConsumptionPercentAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Databases_DtuConsumptionPercent_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlServersDatabasesDtuConsumptionPercentAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlServersDatabasesDtuConsumptionPercentWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlServersDatabasesDtuConsumptionPercentFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlServersDatabasesDtuConsumptionPercentMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlServersDatabasesDtuConsumptionPercentAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlServersDatabasesDtuConsumptionPercentThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlServersDatabasesDtuConsumptionPercentPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersDatabasesMemoryUsagePercentAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Databases_MemoryUsagePercent_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlServersDatabasesMemoryUsagePercentAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlServersDatabasesMemoryUsagePercentWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlServersDatabasesMemoryUsagePercentFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlServersDatabasesMemoryUsagePercentMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlServersDatabasesMemoryUsagePercentAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlServersDatabasesMemoryUsagePercentThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlServersDatabasesMemoryUsagePercentPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersDatabasesSessionsCountAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Databases_SessionsCount_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlServersDatabasesSessionsCountAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlServersDatabasesSessionsCountWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlServersDatabasesSessionsCountFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlServersDatabasesSessionsCountMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlServersDatabasesSessionsCountAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlServersDatabasesSessionsCountThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlServersDatabasesSessionsCountPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersDatabasesSqlInstanceCpuPercentAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Databases_SqlInstanceCpuPercent_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlServersDatabasesSqlInstanceCpuPercentAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlServersDatabasesSqlInstanceCpuPercentWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlServersDatabasesSqlInstanceCpuPercentFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlServersDatabasesSqlInstanceCpuPercentMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlServersDatabasesSqlInstanceCpuPercentAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlServersDatabasesSqlInstanceCpuPercentThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlServersDatabasesSqlInstanceCpuPercentPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersDatabasesSqlInstanceMemoryPercentAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Databases_SqlInstanceMemoryPercent_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlServersDatabasesSqlInstanceMemoryPercentAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlServersDatabasesSqlInstanceMemoryPercentWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlServersDatabasesSqlInstanceMemoryPercentFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlServersDatabasesSqlInstanceMemoryPercentMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlServersDatabasesSqlInstanceMemoryPercentAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlServersDatabasesSqlInstanceMemoryPercentThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlServersDatabasesSqlInstanceMemoryPercentPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersDatabasesStorageAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Databases_Storage_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlServersDatabasesStorageAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlServersDatabasesStorageWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlServersDatabasesStorageFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlServersDatabasesStorageMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlServersDatabasesStorageAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlServersDatabasesStorageThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlServersDatabasesStoragePolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersDatabasesTempDbDataSizeAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Databases_TempDbDataSize_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlServersDatabasesTempDbDataSizeAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlServersDatabasesTempDbDataSizeWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlServersDatabasesTempDbDataSizeFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlServersDatabasesTempDbDataSizeMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlServersDatabasesTempDbDataSizeAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlServersDatabasesTempDbDataSizeThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlServersDatabasesTempDbDataSizePolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersElasticpoolsAllocatedDataStorageAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Elasticpools_AllocatedDataStorage_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersElasticpoolsAllocatedDataStoragePercentAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Elasticpools_AllocatedDataStoragePercent_Alert",
         "parameters": {
           "severity": {
             "value": "[[parameters('SqlManagedInstancesAvgCpuPercentAlertSeverity')]"
@@ -248,8 +2235,8 @@
         }
       },
       {
-        "policyDefinitionReferenceId": "ALZ_SqlManagedInstancesStorageSpaceUsedMbAlert",
-        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlManagedInstances_StorageSpaceUsedMb_Alert",
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersElasticpoolsCpuPercentAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Elasticpools_CpuPercent_Alert",
         "parameters": {
           "severity": {
             "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbAlertSeverity')]"
@@ -271,6 +2258,369 @@
           },
           "effect": {
             "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersElasticpoolsDtuConsumptionPercentAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Elasticpools_DtuConsumptionPercent_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersElasticpoolseDtuUsedAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Elasticpools_eDtuUsed_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_Deploy_SqlServers_Elasticpools_LogWritePercent_Alert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Elasticpools_LogWritePercent_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersElasticpoolsPhysicalDataReadPercentAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Elasticpools_PhysicalDataReadPercent_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersElasticpoolsSessionsPercentAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Elasticpools_SessionsPercent_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlManagedInstancesAvgCpuPercentAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlManagedInstancesAvgCpuPercentWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlManagedInstancesAvgCpuPercentFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlManagedInstancesAvgCpuPercentMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlManagedInstancesAvgCpuPercentAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlManagedInstancesAvgCpuPercentThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlManagedInstancesAvgCpuPercentPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersElasticpoolsSqlServerProcessCorePercentAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Elasticpools_SqlServerProcessCorePercent_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersElasticpoolsSqlServerProcessMemoryPercentAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Elasticpools_SqlServerProcessMemoryPercent_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersElasticpoolsStoragePercentAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Elasticpools_StoragePercent_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersElasticpoolsTempDbLogUsedPercentAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Elasticpools_TempDbLogUsedPercent_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersElasticpoolsWorkersPercentAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Elasticpools_WorkersPercent_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlManagedInstancesStorageSpaceUsedMbPolicyEffect')]"
+          },
+          "MonitorDisableTagName": {
+            "value": "[[parameters('ALZMonitorDisableTagName')]"
+          },
+          "MonitorDisableTagValues": {
+            "value": "[[parameters('ALZMonitorDisableTagValues')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersElasticpoolsXtpStoragePercentAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Elasticpools_XtpStoragePercent_Alert",
+        "parameters": {
+          "severity": {
+            "value": "[[parameters('SqlManagedInstancesAvgCpuPercentAlertSeverity')]"
+          },
+          "windowSize": {
+            "value": "[[parameters('SqlManagedInstancesAvgCpuPercentWindowSize')]"
+          },
+          "evaluationFrequency": {
+            "value": "[[parameters('SqlManagedInstancesAvgCpuPercentFrequency')]"
+          },
+          "autoMitigate": {
+            "value": "[[parameters('SqlManagedInstancesAvgCpuPercentMitigate')]"
+          },
+          "enabled": {
+            "value": "[[parameters('SqlManagedInstancesAvgCpuPercentAlertState')]"
+          },
+          "threshold": {
+            "value": "[[parameters('SqlManagedInstancesAvgCpuPercentThreshold')]"
+          },
+          "effect": {
+            "value": "[[parameters('SqlManagedInstancesAvgCpuPercentPolicyEffect')]"
           },
           "MonitorDisableTagName": {
             "value": "[[parameters('ALZMonitorDisableTagName')]"

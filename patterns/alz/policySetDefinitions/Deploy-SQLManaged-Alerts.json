@@ -17,7 +17,10 @@
     "parameters": {
       "SqlManagedInstancesAvgCpuPercentAlertSeverity": {
         "type": "String",
-        "defaultValue": "1",
+        "metadata": {
+          "displayName": "Severity",
+          "description": "Severity of the Alert"
+        },
         "allowedValues": [
           "0",
           "1",
@@ -25,14 +28,14 @@
           "3",
           "4"
         ],
-        "metadata": {
-          "displayName": "Storage Account Availability Alert Severity",
-          "description": "Severity of the alert for Storage Account Availability"
-        }
+        "defaultValue": "2"
       },
       "SqlManagedInstancesAvgCpuPercentWindowSize": {
-        "type": "string",
-        "defaultValue": "PT5M",
+        "type": "String",
+        "metadata": {
+          "displayName": "Window Size",
+          "description": "Window size for the alert"
+        },
         "allowedValues": [
           "PT1M",
           "PT5M",
@@ -43,10 +46,7 @@
           "PT12H",
           "P1D"
         ],
-        "metadata": {
-          "displayName": "Storage Account Availability Window Size",
-          "description": "Window size for the alert"
-        }
+        "defaultValue": "PT5M"
       },
       "SqlManagedInstancesAvgCpuPercentMitigate": {
         "type": "String",
@@ -60,9 +60,12 @@
         ],
         "defaultValue": "true"
       },
-      "SqlManagedInstancesAvgCpuPercentFrequency": {
-        "type": "string",
-        "defaultValue": "PT5M",
+      "SqlManagedInstancesAvgCpuPercentFrequency":  {
+        "type": "String",
+        "metadata": {
+          "displayName": "Evaluation Frequency",
+          "description": "Evaluation frequency for the alert"
+        },
         "allowedValues": [
           "PT1M",
           "PT5M",
@@ -70,42 +73,46 @@
           "PT30M",
           "PT1H"
         ],
-        "metadata": {
-          "displayName": "Storage Account Availability Evaluation Frequency",
-          "description": "Evaluation frequency for the alert"
-        }
+        "defaultValue": "PT1M"
       },
       "SqlManagedInstancesAvgCpuPercentPolicyEffect": {
-        "type": "string",
-        "defaultValue": "deployIfNotExists",
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Effect of the policy"
+        },
         "allowedValues": [
           "deployIfNotExists",
           "disabled"
         ],
-        "metadata": {
-          "displayName": "Storage Account Availability Policy Effect",
-          "description": "Policy effect for the alert, deployIfNotExists will deploy the alert if it does not exist"
-        }
+        "defaultValue": "deployIfNotExists"
       },
       "SqlManagedInstancesAvgCpuPercentAlertState": {
-        "type": "string",
-        "defaultValue": "true",
+        "type": "String",
         "metadata": {
-          "displayName": "Storage Account Availability Alert State",
+          "displayName": "Alert State",
           "description": "Alert state for the alert"
-        }
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
       },
       "SqlManagedInstancesAvgCpuPercentThreshold": {
-        "type": "string",
-        "defaultValue": "90",
+        "type": "String",
         "metadata": {
-          "displayName": "Storage Account Availability Threshold",
+          "displayName": "Threshold",
           "description": "Threshold for the alert"
-        }
+        },
+        "defaultValue": "80"
       },
       "SqlManagedInstancesStorageSpaceUsedMbAlertSeverity": {
         "type": "String",
-        "defaultValue": "1",
+        "metadata": {
+          "displayName": "Severity",
+          "description": "Severity of the Alert"
+        },
         "allowedValues": [
           "0",
           "1",
@@ -113,14 +120,14 @@
           "3",
           "4"
         ],
-        "metadata": {
-          "displayName": "Storage Account Availability Alert Severity",
-          "description": "Severity of the alert for Storage Account Availability"
-        }
+        "defaultValue": "3"
       },
       "SqlManagedInstancesStorageSpaceUsedMbWindowSize": {
-        "type": "string",
-        "defaultValue": "PT5M",
+        "type": "String",
+        "metadata": {
+          "displayName": "Window Size",
+          "description": "Window size for the alert"
+        },
         "allowedValues": [
           "PT1M",
           "PT5M",
@@ -131,12 +138,9 @@
           "PT12H",
           "P1D"
         ],
-        "metadata": {
-          "displayName": "Storage Account Availability Window Size",
-          "description": "Window size for the alert"
-        }
+        "defaultValue": "PT5M"
       },
-      "SqlManagedInstancesStorageSpaceUsedMbMitigate": {
+      "SqlManagedInstancesStorageSpaceUsedMbMitigate":  {
         "type": "String",
         "metadata": {
           "displayName": "Auto Mitigate",
@@ -149,8 +153,11 @@
         "defaultValue": "true"
       },
       "SqlManagedInstancesStorageSpaceUsedMbFrequency": {
-        "type": "string",
-        "defaultValue": "PT5M",
+        "type": "String",
+        "metadata": {
+          "displayName": "Evaluation Frequency",
+          "description": "Evaluation frequency for the alert"
+        },
         "allowedValues": [
           "PT1M",
           "PT5M",
@@ -158,38 +165,39 @@
           "PT30M",
           "PT1H"
         ],
-        "metadata": {
-          "displayName": "Storage Account Availability Evaluation Frequency",
-          "description": "Evaluation frequency for the alert"
-        }
+        "defaultValue": "PT1M"
       },
       "SqlManagedInstancesStorageSpaceUsedMbPolicyEffect": {
-        "type": "string",
-        "defaultValue": "deployIfNotExists",
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Effect of the policy"
+        },
         "allowedValues": [
           "deployIfNotExists",
           "disabled"
         ],
-        "metadata": {
-          "displayName": "Storage Account Availability Policy Effect",
-          "description": "Policy effect for the alert, deployIfNotExists will deploy the alert if it does not exist"
-        }
+        "defaultValue": "deployIfNotExists"
       },
       "SqlManagedInstancesStorageSpaceUsedMbAlertState": {
-        "type": "string",
-        "defaultValue": "true",
+        "type": "String",
         "metadata": {
-          "displayName": "Storage Account Availability Alert State",
+          "displayName": "Alert State",
           "description": "Alert state for the alert"
-        }
+        },
+        "allowedValues": [
+          "true",
+          "false"
+        ],
+        "defaultValue": "true"
       },
       "SqlManagedInstancesStorageSpaceUsedMbThreshold": {
-        "type": "string",
-        "defaultValue": "90",
+        "type": "String",
         "metadata": {
-          "displayName": "Storage Account Availability Threshold",
+          "displayName": "Threshold",
           "description": "Threshold for the alert"
-        }
+        },
+        "defaultValue": "80"
       },
       "ALZMonitorDisableTagName": {
         "type": "String",
