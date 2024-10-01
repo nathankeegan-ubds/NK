@@ -1,7 +1,7 @@
 {
   "type": "Microsoft.Authorization/policyDefinitions",
   "apiVersion": "2021-06-01",
-  "name": "3743016a-a056-43fe-b53a-36dd9a17626d",
+  "name": "Deploy_SqlServers_Elasticpools_AllocatedDataStorage_Alert",
   "properties": {
     "policyType": "Custom",
     "mode": "All",

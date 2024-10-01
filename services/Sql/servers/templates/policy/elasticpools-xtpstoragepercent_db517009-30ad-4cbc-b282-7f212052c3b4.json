@@ -1,7 +1,7 @@
 {
   "type": "Microsoft.Authorization/policyDefinitions",
   "apiVersion": "2021-06-01",
-  "name": "db517009-30ad-4cbc-b282-7f212052c3b4",
+  "name": "Deploy_SqlServers_Elasticpools_XtpStoragePercent_Alert",
   "properties": {
     "policyType": "Custom",
     "mode": "All",

@@ -1,7 +1,7 @@
 {
   "type": "Microsoft.Authorization/policyDefinitions",
   "apiVersion": "2021-06-01",
-  "name": "1b37038e-6e5c-4463-97d4-8a632251d70e",
+  "name": "Deploy_SqlServers_Elasticpools_WorkersPercent_Alert",
   "properties": {
     "policyType": "Custom",
     "mode": "All",

@@ -1,7 +1,7 @@
 {
   "type": "Microsoft.Authorization/policyDefinitions",
   "apiVersion": "2021-06-01",
-  "name": "47cd814e-1991-437e-8feb-e589a250d2a3",
+  "name": "Deploy_SqlServers_Elasticpools_LogWritePercent_Alert",
   "properties": {
     "policyType": "Custom",
     "mode": "All",

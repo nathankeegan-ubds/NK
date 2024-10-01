@@ -1,7 +1,7 @@
 {
   "type": "Microsoft.Authorization/policyDefinitions",
   "apiVersion": "2021-06-01",
-  "name": "fa056aaf-57c4-4abe-9bc5-23ba413a1f5b",
+  "name": "Deploy_SqlServers_Elasticpools_SqlServerProcessMemoryPercent_Alert",
   "properties": {
     "policyType": "Custom",
     "mode": "All",

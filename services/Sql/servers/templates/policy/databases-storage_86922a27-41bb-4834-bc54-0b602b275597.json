@@ -1,7 +1,7 @@
 {
   "type": "Microsoft.Authorization/policyDefinitions",
   "apiVersion": "2021-06-01",
-  "name": "86922a27-41bb-4834-bc54-0b602b275597",
+  "name": "Deploy_SqlServers_Databases_Storage_Alert",
   "properties": {
     "policyType": "Custom",
     "mode": "All",

@@ -1,7 +1,7 @@
 {
   "type": "Microsoft.Authorization/policyDefinitions",
   "apiVersion": "2021-06-01",
-  "name": "07eeae07-010e-47ca-ad90-fa7adb5a6c52",
+  "name": "Deploy_SqlServers_Databases_SessionsCount_Alert",
   "properties": {
     "policyType": "Custom",
     "mode": "All",

@@ -1,7 +1,7 @@
 {
   "type": "Microsoft.Authorization/policyDefinitions",
   "apiVersion": "2021-06-01",
-  "name": "92efc2ea-b6ed-41aa-921c-6d40e7b58c27",
+  "name": "Deploy_SqlServers_Elasticpools_PhysicalDataReadPercent_Alert",
   "properties": {
     "policyType": "Custom",
     "mode": "All",

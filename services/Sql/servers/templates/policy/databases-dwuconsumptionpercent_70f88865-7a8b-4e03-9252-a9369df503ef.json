@@ -1,7 +1,7 @@
 {
   "type": "Microsoft.Authorization/policyDefinitions",
   "apiVersion": "2021-06-01",
-  "name": "70f88865-7a8b-4e03-9252-a9369df503ef",
+  "name": "Deploy_SqlServers_Databases_DtuConsumptionPercent_Alert",
   "properties": {
     "policyType": "Custom",
     "mode": "All",

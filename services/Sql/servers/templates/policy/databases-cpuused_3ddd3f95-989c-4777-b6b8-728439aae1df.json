@@ -1,7 +1,7 @@
 {
   "type": "Microsoft.Authorization/policyDefinitions",
   "apiVersion": "2021-06-01",
-  "name": "3ddd3f95-989c-4777-b6b8-728439aae1df",
+  "name": "3Deploy_SqlServers_Databases_CpuUsed_Alert",
   "properties": {
     "policyType": "Custom",
     "mode": "All",

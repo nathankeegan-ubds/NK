@@ -1,7 +1,7 @@
 {
   "type": "Microsoft.Authorization/policyDefinitions",
   "apiVersion": "2021-06-01",
-  "name": "2cda2f3a-8657-431a-a50f-56835aea9a81",
+  "name": "Deploy_SqlServers_Databases_BlockedByFirewall_Alert",
   "properties": {
     "policyType": "Custom",
     "mode": "All",

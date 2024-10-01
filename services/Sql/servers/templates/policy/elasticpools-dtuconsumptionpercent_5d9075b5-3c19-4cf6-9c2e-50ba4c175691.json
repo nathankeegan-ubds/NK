@@ -1,11 +1,11 @@
 {
   "type": "Microsoft.Authorization/policyDefinitions",
   "apiVersion": "2021-06-01",
-  "name": "5d9075b5-3c19-4cf6-9c2e-50ba4c175691",
+  "name": "Deploy_SqlServers_Elasticpools_DtuConsumptionPercent_Alert",
   "properties": {
     "policyType": "Custom",
     "mode": "All",
-    "displayName": "Deploy Sql Servers Elasticpools DTU Conssumption Percentage Alert",
+    "displayName": "Deploy Sql Servers Elasticpools DTU Consumption Percentage Alert",
     "description": "Policy to Audit/Deploy Sql servers elasticpools dtu_consumption_percent Alert",
     "metadata": {
       "version": "1.0.0-preview",

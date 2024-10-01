@@ -1,7 +1,7 @@
 {
   "type": "Microsoft.Authorization/policyDefinitions",
   "apiVersion": "2021-06-01",
-  "name": "50124594-a291-4183-a8e3-195f5e6f5204",
+  "name": "Deploy_SqlServers_Databases_DtuLimit_Alert",
   "properties": {
     "policyType": "Custom",
     "mode": "All",

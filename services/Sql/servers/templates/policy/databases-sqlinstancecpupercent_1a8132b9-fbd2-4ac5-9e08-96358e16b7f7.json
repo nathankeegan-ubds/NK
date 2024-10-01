@@ -1,7 +1,7 @@
 {
   "type": "Microsoft.Authorization/policyDefinitions",
   "apiVersion": "2021-06-01",
-  "name": "1a8132b9-fbd2-4ac5-9e08-96358e16b7f7",
+  "name": "Deploy_SqlServers_Databases_SqlInstanceCpuPercent_Alert",
   "properties": {
     "policyType": "Custom",
     "mode": "All",

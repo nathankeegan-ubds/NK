@@ -1,7 +1,7 @@
 {
   "type": "Microsoft.Authorization/policyDefinitions",
   "apiVersion": "2021-06-01",
-  "name": "d528ffcb-3a99-4356-96d1-981499139ffb",
+  "name": "Deploy_SqlServers_Databases_ConnectionFailedUserError_Alert",
   "properties": {
     "policyType": "Custom",
     "mode": "All",

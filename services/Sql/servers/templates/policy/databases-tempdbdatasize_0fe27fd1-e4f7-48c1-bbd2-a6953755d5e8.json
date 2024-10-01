@@ -1,7 +1,7 @@
 {
   "type": "Microsoft.Authorization/policyDefinitions",
   "apiVersion": "2021-06-01",
-  "name": "0fe27fd1-e4f7-48c1-bbd2-a6953755d5e8",
+  "name": "Deploy_SqlServers_Databases_TempDbDataSize_Alert",
   "properties": {
     "policyType": "Custom",
     "mode": "All",

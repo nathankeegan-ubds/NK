@@ -1,7 +1,7 @@
 {
   "type": "Microsoft.Authorization/policyDefinitions",
   "apiVersion": "2021-06-01",
-  "name": "805c4ae5-a852-43bd-ad1c-0f7f381d8f32",
+  "name": "Deploy_SqlServers_Elasticpools_CpuPercent_Alert",
   "properties": {
     "policyType": "Custom",
     "mode": "All",

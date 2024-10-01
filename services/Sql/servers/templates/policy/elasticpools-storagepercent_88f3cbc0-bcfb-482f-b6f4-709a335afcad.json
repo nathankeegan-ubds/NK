@@ -1,7 +1,7 @@
 {
   "type": "Microsoft.Authorization/policyDefinitions",
   "apiVersion": "2021-06-01",
-  "name": "88f3cbc0-bcfb-482f-b6f4-709a335afcad",
+  "name": "Deploy_SqlServers_Elasticpools_StoragePercent_Alert",
   "properties": {
     "policyType": "Custom",
     "mode": "All",

@@ -1,7 +1,7 @@
 {
   "type": "Microsoft.Authorization/policyDefinitions",
   "apiVersion": "2021-06-01",
-  "name": "af66de51-079c-4d34-af92-f52f887642dc",
+  "name": "Deploy_SqlServers_Elasticpools_TempDbLogUsedPercent_Alert",
   "properties": {
     "policyType": "Custom",
     "mode": "All",

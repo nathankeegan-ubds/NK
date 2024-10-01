@@ -1,7 +1,7 @@
 {
   "type": "Microsoft.Authorization/policyDefinitions",
   "apiVersion": "2021-06-01",
-  "name": "460b6b29-a602-4409-b748-6b47b232a984",
+  "name": "Deploy_SqlServers_Databases_ConnectionSuccessful_Alert",
   "properties": {
     "policyType": "Custom",
     "mode": "All",

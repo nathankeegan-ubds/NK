@@ -1,7 +1,7 @@
 {
   "type": "Microsoft.Authorization/policyDefinitions",
   "apiVersion": "2021-06-01",
-  "name": "f5c13b49-8528-457d-9d7d-083b8433bf96",
+  "name": "Deploy_SqlServers_Databases_MemoryUsagePercent_Alert",
   "properties": {
     "policyType": "Custom",
     "mode": "All",

@@ -1,7 +1,7 @@
 {
   "type": "Microsoft.Authorization/policyDefinitions",
   "apiVersion": "2021-06-01",
-  "name": "73ec4301-872a-4bea-928e-420255aae8cb",
+  "name": "Deploy_SqlServers_Elasticpools_SqlServerProcessCorePercent_Alert",
   "properties": {
     "policyType": "Custom",
     "mode": "All",
