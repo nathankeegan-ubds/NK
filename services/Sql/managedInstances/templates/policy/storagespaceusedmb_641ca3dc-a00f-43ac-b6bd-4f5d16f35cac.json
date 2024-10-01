@@ -5,7 +5,7 @@
   "properties": {
     "policyType": "Custom",
     "mode": "All",
-    "displayName": "Deploy Sql managedInstances storage_space_used_mb Alert",
+    "displayName": "Deploy Sql Managed Instances Storage Used (MB) Alert",
     "description": "Policy to Audit/Deploy Sql managedInstances storage_space_used_mb Alert",
     "metadata": {
       "version": "1.0.0-preview",
