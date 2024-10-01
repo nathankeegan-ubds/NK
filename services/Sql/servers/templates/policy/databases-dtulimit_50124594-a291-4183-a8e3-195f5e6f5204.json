@@ -5,7 +5,7 @@
   "properties": {
     "policyType": "Custom",
     "mode": "All",
-    "displayName": "Deploy Sql servers databases dtu_limit Alert",
+    "displayName": "Deploy Sql Servers Databases DTU Limit Alert",
     "description": "Policy to Audit/Deploy Sql servers databases dtu_limit Alert",
     "metadata": {
       "version": "1.0.0-preview",

@@ -5,7 +5,7 @@
   "properties": {
     "policyType": "Custom",
     "mode": "All",
-    "displayName": "Deploy Sql servers elasticpools allocated_data_storage Alert",
+    "displayName": "Deploy Sql Servers Elasticpools Allocated Data Storage Alert",
     "description": "Policy to Audit/Deploy Sql servers elasticpools allocated_data_storage Alert",
     "metadata": {
       "version": "1.0.0-preview",

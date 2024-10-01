@@ -5,7 +5,7 @@
   "properties": {
     "policyType": "Custom",
     "mode": "All",
-    "displayName": "Deploy Sql servers databases connection_failed_user_error Alert",
+    "displayName": "Deploy Sql Servers Databases Connection Failed User Error Alert",
     "description": "Policy to Audit/Deploy Sql servers databases connection_failed_user_error Alert",
     "metadata": {
       "version": "1.0.0-preview",

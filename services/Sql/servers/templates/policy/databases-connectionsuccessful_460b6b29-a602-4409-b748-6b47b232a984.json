@@ -5,7 +5,7 @@
   "properties": {
     "policyType": "Custom",
     "mode": "All",
-    "displayName": "Deploy Sql servers databases connection_successful Alert",
+    "displayName": "Deploy Sql Servers Databases Connection Successful Alert",
     "description": "Policy to Audit/Deploy Sql servers databases connection_successful Alert",
     "metadata": {
       "version": "1.0.0-preview",

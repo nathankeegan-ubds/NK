@@ -5,7 +5,7 @@
   "properties": {
     "policyType": "Custom",
     "mode": "All",
-    "displayName": "Deploy Sql servers databases tempdb_data_size Alert",
+    "displayName": "Deploy Sql Servers Databases Temp DB Data Size Alert",
     "description": "Policy to Audit/Deploy Sql servers databases tempdb_data_size Alert",
     "metadata": {
       "version": "1.0.0-preview",
