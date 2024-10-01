@@ -67,9 +67,39 @@ var deploymentLocation = '"location": "${targetDeploymentLocationByCloudType[clo
 // We use loadTextContent instead of loadJsonContent  as this allows us to perform string replacement operations against the imported templates.
 var loadPolicyDefinitions = {
   All: [
-    // Try adding SQL 
-    loadTextContent('../../../services/Sql/managedInstances/templates/policy/avgcpupercent_dfd37715-0d5c-4ec5-98ae-836cd626a27f.json')
-    loadTextContent('../../../services/Sql/managedInstances/templates/policy/storagespaceusedmb_641ca3dc-a00f-43ac-b6bd-4f5d16f35cac.json')
+    // Add SQL Server Monitoring Policy definitions
+    loadTextContent('../../../services/Sql/servers/templates/policy/databases-appcpupercent_05591510-5fe2-454a-96d8-bbda8201c6a4.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/databases-appmemorypercent_c5c95fe9-a4b4-4afa-a07a-a0d18804d416.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/databases-blockedbyfirewall_2cda2f3a-8657-431a-a50f-56835aea9a81.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/databases-connectionfailed_7157dc17-9d5a-4835-a122-1d0d904d61ff.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/databases-connectionfailedusererror_d528ffcb-3a99-4356-96d1-981499139ffb.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/databases-connectionsuccessful_460b6b29-a602-4409-b748-6b47b232a984.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/databases-cpuused_3ddd3f95-989c-4777-b6b8-728439aae1df.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/databases-deadlock_ce44fc81-3610-4165-a107-9dd4b8ab3972.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/databases-dtulimit_50124594-a291-4183-a8e3-195f5e6f5204.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/databases-dtuused_d26f4c8b-0461-4c57-b230-cbd1a5424db1.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/databases-dwuconsumptionpercent_70f88865-7a8b-4e03-9252-a9369df503ef.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/databases-memoryusagepercent_f5c13b49-8528-457d-9d7d-083b8433bf96.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/databases-sessionscount_07eeae07-010e-47ca-ad90-fa7adb5a6c52.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/databases-sqlinstancecpupercent_1a8132b9-fbd2-4ac5-9e08-96358e16b7f7.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/databases-sqlinstancememorypercent_f44a3cb0-6e99-4a5e-a691-c5d7d5bf7e64.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/databases-storage_86922a27-41bb-4834-bc54-0b602b275597.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/databases-tempdbdatasize_0fe27fd1-e4f7-48c1-bbd2-a6953755d5e8.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/elasticpools-allocateddatastorage_3743016a-a056-43fe-b53a-36dd9a17626d.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/elasticpools-allocateddatastoragepercent_7e9d0710-3243-4cf2-8b73-6be1539b8545.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/elasticpools-cpupercent_805c4ae5-a852-43bd-ad1c-0f7f381d8f32.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/elasticpools-dtuconsumptionpercent_5d9075b5-3c19-4cf6-9c2e-50ba4c175691.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/elasticpools-eDTUused_16a64053-1905-4d8e-8198-810584cad108.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/elasticpools-logwritepercent_47cd814e-1991-437e-8feb-e589a250d2a3.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/elasticpools-physicaldatareadpercent_92efc2ea-b6ed-41aa-921c-6d40e7b58c27.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/elasticpools-sessionspercent_6b2e0ce9-d1b8-4061-b3ce-c39f9c5c1763.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/elasticpools-sqlserverprocesscorepercent_73ec4301-872a-4bea-928e-420255aae8cb.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/elasticpools-sqlserverprocessmemorypercent_fa056aaf-57c4-4abe-9bc5-23ba413a1f5b.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/elasticpools-storagepercent_88f3cbc0-bcfb-482f-b6f4-709a335afcad.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/elasticpools-tempdblogusedpercent_af66de51-079c-4d34-af92-f52f887642dc.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/elasticpools-workerspercent_1b37038e-6e5c-4463-97d4-8a632251d70e.json')
+    loadTextContent('../../../services/Sql/servers/templates/policy/elasticpools-xtpstoragepercent_db517009-30ad-4cbc-b282-7f212052c3b4.json')
+    
   ]
   AzureCloud: []
   AzureChinaCloud: []
@@ -82,7 +112,7 @@ var loadPolicyDefinitions = {
 // Use string(loadJsonContent('../file.json')) when the JSON has more than 131072 characters
 var loadPolicySetDefinitions = {
   All: [
-    string(loadJsonContent('../policySetDefinitions/Deploy-SQLManaged-Alerts.json'))
+    string(loadJsonContent('../policySetDefinitions/Deploy-SQLServer-Alerts.json'))
   ]
   AzureCloud: []
   AzureChinaCloud: []

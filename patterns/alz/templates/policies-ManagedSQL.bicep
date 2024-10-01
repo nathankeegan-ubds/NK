@@ -67,7 +67,7 @@ var deploymentLocation = '"location": "${targetDeploymentLocationByCloudType[clo
 // We use loadTextContent instead of loadJsonContent  as this allows us to perform string replacement operations against the imported templates.
 var loadPolicyDefinitions = {
   All: [
-    // Try adding SQL 
+    // Add SQL Managed Instance Monitoring Policy Definitions
     loadTextContent('../../../services/Sql/managedInstances/templates/policy/avgcpupercent_dfd37715-0d5c-4ec5-98ae-836cd626a27f.json')
     loadTextContent('../../../services/Sql/managedInstances/templates/policy/storagespaceusedmb_641ca3dc-a00f-43ac-b6bd-4f5d16f35cac.json')
   ]
