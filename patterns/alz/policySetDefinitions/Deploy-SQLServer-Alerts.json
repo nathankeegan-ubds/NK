@@ -3046,8 +3046,8 @@
           "enabled": {
             "value": "[[parameters('SqlServersDatabasesConnectionFailedUserErrorAlertState')]"
           },
-          "alertSensitivity": {
-            "value": "[[parameters('SqlServersDatabasesConnectionSuccessfulAlertSensitvity')]"
+          "threshold": {
+            "value": "[[parameters('SqlServersDatabasesConnectionFailedUserErrorThreshold')]"
           },
           "effect": {
             "value": "[[parameters('SqlServersDatabasesConnectionFailedUserErrorPolicyEffect')]"
@@ -3079,8 +3079,8 @@
           "enabled": {
             "value": "[[parameters('SqlServersDatabasesConnectionSuccessfulAlertState')]"
           },
-          "threshold": {
-            "value": "[[parameters('SqlServersDatabasesConnectionSuccessfulThreshold')]"
+          "alertSensitivity": {
+            "value": "[[parameters('SqlServersDatabasesConnectionSuccessfulAlertSensitvity')]"
           },
           "effect": {
             "value": "[[parameters('SqlServersDatabasesConnectionSuccessfulPolicyEffect')]"
