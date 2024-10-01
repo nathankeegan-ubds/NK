@@ -2433,7 +2433,7 @@
         ],
         "defaultValue": "deployIfNotExists"
       },
-      "SqlServersElasticpoolsSqlServerProcessMemoryPercentAlertSeverity": {
+      "SqlServersElasticpoolsSqlServerProcessMemPercentAlertSeverity": {
         "type": "String",
         "metadata": {
           "displayName": "Severity",
@@ -2448,7 +2448,7 @@
         ],
         "defaultValue": "2"
       },
-      "SqlServersElasticpoolsSqlServerProcessMemoryPercentWindowSize": {
+      "SqlServersElasticpoolsSqlServerProcessMemPercentWindowSize": {
         "type": "String",
         "metadata": {
           "displayName": "Window Size",
@@ -2466,7 +2466,7 @@
         ],
         "defaultValue": "PT5M"
       },
-      "SqlServersElasticpoolsSqlServerProcessMemoryPercentFrequency": {
+      "SqlServersElasticpoolsSqlServerProcessMemPercentFrequency": {
         "type": "String",
         "metadata": {
           "displayName": "Evaluation Frequency",
@@ -2481,7 +2481,7 @@
         ],
         "defaultValue": "PT1M"
       },
-      "SqlServersElasticpoolsSqlServerProcessMemoryPercentMitigate": {
+      "SqlServersElasticpoolsSqlServerProcessMemPercentMitigate": {
         "type": "String",
         "metadata": {
           "displayName": "Auto Mitigate",
@@ -2493,7 +2493,7 @@
         ],
         "defaultValue": "true"
       },
-      "SqlServersElasticpoolsSqlServerProcessMemoryPercentAlertState": {
+      "SqlServersElasticpoolsSqlServerProcessMemPercentAlertState": {
         "type": "String",
         "metadata": {
           "displayName": "Alert State",
@@ -2505,7 +2505,7 @@
         ],
         "defaultValue": "true"
       },
-      "SqlServersElasticpoolsSqlServerProcessMemoryPercentThreshold": {
+      "SqlServersElasticpoolsSqlServerProcessMemPercentThreshold": {
         "type": "String",
         "metadata": {
           "displayName": "Threshold",
@@ -2513,7 +2513,7 @@
         },
         "defaultValue": "90"
       },     
-      "SqlServersElasticpoolsSqlServerProcessMemoryPercentPolicyEffect": {
+      "SqlServersElasticpoolsSqlServerProcessMemPercentPolicyEffect": {
         "type": "String",
         "metadata": {
           "displayName": "Effect",
@@ -3754,29 +3754,29 @@
         }
       },
       {
-        "policyDefinitionReferenceId": "ALZ_DeploySqlServersElasticpoolsSqlServerProcessMemoryPercentAlert",
-        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Elasticpools_SqlServerProcessMemoryPercent_Alert",
+        "policyDefinitionReferenceId": "ALZ_DeploySqlServersElasticpoolsSqlServerProcessMemPercentAlert",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/contoso/providers/Microsoft.Authorization/policyDefinitions/Deploy_SqlServers_Elasticpools_SqlServerProcessMemPercent_Alert",
         "parameters": {
           "severity": {
-            "value": "[[parameters('SqlServersElasticpoolsSqlServerProcessMemoryPercentAlertSeverity')]"
+            "value": "[[parameters('SqlServersElasticpoolsSqlServerProcessMemPercentAlertSeverity')]"
           },
           "windowSize": {
-            "value": "[[parameters('SqlServersElasticpoolsSqlServerProcessMemoryPercentWindowSize')]"
+            "value": "[[parameters('SqlServersElasticpoolsSqlServerProcessMemPercentWindowSize')]"
           },
           "evaluationFrequency": {
-            "value": "[[parameters('SqlServersElasticpoolsSqlServerProcessMemoryPercentFrequency')]"
+            "value": "[[parameters('SqlServersElasticpoolsSqlServerProcessMemPercentFrequency')]"
           },
           "autoMitigate": {
-            "value": "[[parameters('SqlServersElasticpoolsSqlServerProcessMemoryPercentMitigate')]"
+            "value": "[[parameters('SqlServersElasticpoolsSqlServerProcessMemPercentMitigate')]"
           },
           "enabled": {
-            "value": "[[parameters('SqlServersElasticpoolsSqlServerProcessMemoryPercentAlertState')]"
+            "value": "[[parameters('SqlServersElasticpoolsSqlServerProcessMemPercentAlertState')]"
           },
           "threshold": {
-            "value": "[[parameters('SqlServersElasticpoolsSqlServerProcessMemoryPercentThreshold')]"
+            "value": "[[parameters('SqlServersElasticpoolsSqlServerProcessMemPercentThreshold')]"
           },
           "effect": {
-            "value": "[[parameters('SqlServersElasticpoolsSqlServerProcessMemoryPercentPolicyEffect')]"
+            "value": "[[parameters('SqlServersElasticpoolsSqlServerProcessMemPercentPolicyEffect')]"
           },
           "MonitorDisableTagName": {
             "value": "[[parameters('ALZMonitorDisableTagName')]"
