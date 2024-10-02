@@ -36,7 +36,7 @@
         "value": "Yes"
       },
       "enableAMBAHybridVM": {
-        "value": "Yes"
+        "value": "No"
       },
       "telemetryOptOut": {
         "value": "Yes"
@@ -1034,7 +1034,7 @@
             "value": "GreaterThan"
           },
           "HybridVMHeartBeatRGTimeAggregation": {
-            "value": "Average"
+            "value": "Count"
           },
           "HybridVMNetworkInAlertSeverity": {
             "value": "2"
@@ -1067,7 +1067,7 @@
             "value": "GreaterThan"
           },
           "HybridVMNetworkInTimeAggregation": {
-            "value": "Average"
+            "value": "Count"
           },
           "HybridVMNetworkInEvaluationPeriods": {
             "value": "1"
@@ -1116,7 +1116,7 @@
             "value": "GreaterThan"
           },
           "HybridVMNetworkOutTimeAggregation": {
-            "value": "Average"
+            "value": "Count"
           },
           "HybridVMNetworkOutEvaluationPeriods": {
             "value": "1"
@@ -1165,7 +1165,7 @@
             "value": "GreaterThan"
           },
           "HybridVMOSDiskReadLatencyTimeAggregation": {
-            "value": "Average"
+            "value": "Count"
           },
           "HybridVMOSDiskReadLatencyEvaluationPeriods": {
             "value": "1"
@@ -1215,7 +1215,7 @@
             "value": "GreaterThan"
           },
           "HybridVMOSDiskWriteLatencyTimeAggregation": {
-            "value": "Average"
+            "value": "Count"
           },
           "HybridVMOSDiskWriteLatencyEvaluationPeriods": {
             "value": "1"
@@ -1265,7 +1265,7 @@
             "value": "LessThan"
           },
           "HybridVMOSDiskSpaceTimeAggregation": {
-            "value": "Average"
+            "value": "Count"
           },
           "HybridVMOSDiskSpaceEvaluationPeriods": {
             "value": "1"
@@ -1315,7 +1315,7 @@
             "value": "GreaterThan"
           },
           "HybridVMPercentCPUTimeAggregation": {
-            "value": "Average"
+            "value": "Count"
           },
           "HybridVMPercentMemoryAlertSeverity": {
             "value": "2"
@@ -1348,7 +1348,7 @@
             "value": "LessThan"
           },
           "HybridVMPercentMemoryTimeAggregation": {
-            "value": "Average"
+            "value": "Count"
           },
           "HybridVMDataDiskSpaceAlertSeverity": {
             "value": "2"
@@ -1381,7 +1381,7 @@
             "value": "LessThan"
           },
           "HybridVMDataDiskSpaceTimeAggregation": {
-            "value": "Average"
+            "value": "Count"
           },
           "HybridVMDataDiskSpaceEvaluationPeriods": {
             "value": "1"
@@ -1425,7 +1425,7 @@
             "value": "GreaterThan"
           },
           "HybridVMDataDiskReadLatencyTimeAggregation": {
-            "value": "Average"
+            "value": "Count"
           },
           "HybridVMDataDiskReadLatencyEvaluationPeriods": {
             "value": "1"
@@ -1474,7 +1474,7 @@
             "value": "GreaterThan"
           },
           "HybridVMDataDiskWriteLatencyTimeAggregation": {
-            "value": "Average"
+            "value": "Count"
           },
           "HybridVMDataDiskWriteLatencyEvaluationPeriods": {
             "value": "1"
