@@ -41,6 +41,9 @@
     "enableAMBAHybridVM": {
       "value": "Yes"
     },
+    "enableAMBASQL": {
+      "value": "Yes"
+    },
     "telemetryOptOut": {
       "value": "Yes"
     },
