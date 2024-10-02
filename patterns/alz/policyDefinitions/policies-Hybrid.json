@@ -321,7 +321,8 @@
             "type": "string",
             "defaultValue": "Count",
             "allowedValues": [
-              "Count"
+              "Count",
+              "Average"
             ],
             "metadata": {
               "displayName": "Hybrid VM Heart Beat RG Time Aggregation",
