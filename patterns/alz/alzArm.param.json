@@ -2629,6 +2629,714 @@
           "value": "true"
         }
       }
+    },
+    "policyAssignmentParametersSQL": {
+      "value": {
+        "ALZMonitorDisableTagName": {
+          "value": "MonitorDisable"
+        },
+        "ALZMonitorDisableTagValues": {
+          "value": [
+            "true",
+            "Test",
+            "Dev",
+            "Sandbox"
+          ]
+        },
+        "SqlServersDatabasesCpuPercentAlertSeverity": {
+          "value": "2"
+        },
+        "SqlServersDatabasesCpuPercentWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersDatabasesCpuPercentFrequency": {
+          "value": "PT1M"
+        },
+        "SqlServersDatabasesCpuPercentMitigate": {
+          "value": "true"
+        },
+        "SqlServersDatabasesCpuPercentAlertState": {
+          "value": "true"
+        },
+        "SqlServersDatabasesCpuPercentThreshold": {
+          "value": "80"
+        },
+        "SqlServersDatabasesCpuPercentPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersDatabasesMemoryPercentAlertSeverity": {
+          "value": "3"
+        },
+        "SqlServersDatabasesMemoryPercentWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersDatabasesMemoryPercentFrequency": {
+          "value": "PT1M"
+        },
+        "SqlServersDatabasesMemoryPercentMitigate": {
+          "value": "true"
+        },
+        "SqlServersDatabasesMemoryPercentAlertState": {
+          "value": "true"
+        },
+        "SqlServersDatabasesMemoryPercentThreshold": {
+          "value": "90"
+        },
+        "SqlServersDatabasesMemoryPercentPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersDatabasesBlockedByFirewallAlertSeverity": {
+          "value": "2"
+        },
+        "SqlServersDatabasesBlockedByFirewallWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersDatabasesBlockedByFirewallFrequency": {
+          "value": "PT5M"
+        },
+        "SqlServersDatabasesBlockedByFirewallMitigate": {
+          "value": "true"
+        },
+        "SqlServersDatabasesBlockedByFirewallAlertState": {
+          "value": "true"
+        },
+        "SqlServersDatabasesBlockedByFirewallThreshold": {
+          "value": "5"
+        },
+        "SqlServersDatabasesBlockedByFirewallPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersDatabasesConnectionFailedAlertSeverity": {
+          "value": "3"
+        },
+        "SqlServersDatabasesConnectionFailedWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersDatabasesConnectionFailedFrequency": {
+          "value": "PT1M"
+        },
+        "SqlServersDatabasesConnectionFailedMitigate": {
+          "value": "true"
+        },
+        "SqlServersDatabasesConnectionFailedAlertState": {
+          "value": "true"
+        },
+        "SqlServersDatabasesConnectionFailedThreshold": {
+          "value": "5"
+        },
+        "SqlServersDatabasesConnectionFailedPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersDatabasesConnectionFailedUserErrorAlertSeverity": {
+          "value": "3"
+        },
+        "SqlServersDatabasesConnectionFailedUserErrorWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersDatabasesConnectionFailedUserErrorFrequency": {
+          "value": "PT1M"
+        },
+        "SqlServersDatabasesConnectionFailedUserErrorMitigate": {
+          "value": "true"
+        },
+        "SqlServersDatabasesConnectionFailedUserErrorAlertState": {
+          "value": "true"
+        },
+        "SqlServersDatabasesConnectionFailedUserErrorThreshold": {
+          "value": "1"
+        },
+        "SqlServersDatabasesConnectionFailedUserErrorPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersDatabasesConnectionSuccessfulAlertSeverity": {
+          "value": "4"
+        },
+        "SqlServersDatabasesConnectionSuccessfulWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersDatabasesConnectionSuccessfulFrequency": {
+          "value": "PT5M"
+        },
+        "SqlServersDatabasesConnectionSuccessfulMitigate": {
+          "value": "true"
+        },
+        "SqlServersDatabasesConnectionSuccessfulAlertState": {
+          "value": "true"
+        },
+        "SqlServersDatabasesConnectionSuccessfulAlertSensitvity": {
+          "value": "Low"
+        },
+        "SqlServersDatabasesConnectionSuccessfulPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersDatabasesCpuUsedAlertSeverity": {
+          "value": "3"
+        },
+        "SqlServersDatabasesCpuUsedWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersDatabasesCpuUsedFrequency": {
+          "value": "PT1M"
+        },
+        "SqlServersDatabasesCpuUsedMitigate": {
+          "value": "true"
+        },
+        "SqlServersDatabasesCpuUsedAlertState": {
+          "value": "true"
+        },
+        "SqlServersDatabasesCpuUsedThreshold": {
+          "value": "80"
+        },
+        "SqlServersDatabasesCpuUsedPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersDatabasesDeadlockAlertSeverity": {
+          "value": "3"
+        },
+        "SqlServersDatabasesDeadlockWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersDatabasesDeadlockFrequency": {
+          "value": "PT1M"
+        },
+        "SqlServersDatabasesDeadlockMitigate": {
+          "value": "true"
+        },
+        "SqlServersDatabasesDeadlockAlertState": {
+          "value": "true"
+        },
+        "SqlServersDatabasesDeadlockThreshold": {
+          "value": "1"
+        },
+        "SqlServersDatabasesDeadlockPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersDatabasesDtuLimitAlertSeverity": {
+          "value": "2"
+        },
+        "SqlServersDatabasesDtuLimitWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersDatabasesDtuLimitFrequency": {
+          "value": "PT5M"
+        },
+        "SqlServersDatabasesDtuLimitMitigate": {
+          "value": "true"
+        },
+        "SqlServersDatabasesDtuLimitAlertState": {
+          "value": "true"
+        },
+        "SqlServersDatabasesDtuLimitThreshold": {
+          "value": "100"
+        },
+        "SqlServersDatabasesDtuLimitPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersDatabasesDtuUsedAlertSeverity": {
+          "value": "3"
+        },
+        "SqlServersDatabasesDtuUsedWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersDatabasesDtuUsedFrequency": {
+          "value": "PT5M"
+        },
+        "SqlServersDatabasesDtuUsedMitigate": {
+          "value": "true"
+        },
+        "SqlServersDatabasesDtuUsedAlertState": {
+          "value": "true"
+        },
+        "SqlServersDatabasesDtuUsedThreshold": {
+          "value": "80"
+        },
+        "SqlServersDatabasesDtuUsedPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersDatabasesDtuConsumptionPercentAlertSeverity": {
+          "value": "3"
+        },
+        "SqlServersDatabasesDtuConsumptionPercentWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersDatabasesDtuConsumptionPercentFrequency": {
+          "value": "PT1M"
+        },
+        "SqlServersDatabasesDtuConsumptionPercentMitigate": {
+          "value": "true"
+        },
+        "SqlServersDatabasesDtuConsumptionPercentAlertState": {
+          "value": "true"
+        },
+        "SqlServersDatabasesDtuConsumptionPercentThreshold": {
+          "value": "95"
+        },
+        "SqlServersDatabasesDtuConsumptionPercentPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersDatabasesMemoryUsagePercentAlertSeverity": {
+          "value": "2"
+        },
+        "SqlServersDatabasesMemoryUsagePercentWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersDatabasesMemoryUsagePercentFrequency": {
+          "value": "PT1M"
+        },
+        "SqlServersDatabasesMemoryUsagePercentMitigate": {
+          "value": "true"
+        },
+        "SqlServersDatabasesMemoryUsagePercentAlertState": {
+          "value": "true"
+        },
+        "SqlServersDatabasesMemoryUsagePercentThreshold": {
+          "value": "90"
+        },
+        "SqlServersDatabasesMemoryUsagePercentPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersDatabasesSessionsCountAlertSeverity": {
+          "value": "0"
+        },
+        "SqlServersDatabasesSessionsCountWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersDatabasesSessionsCountFrequency": {
+          "value": "PT5M"
+        },
+        "SqlServersDatabasesSessionsCountMitigate": {
+          "value": "true"
+        },
+        "SqlServersDatabasesSessionsCountAlertState": {
+          "value": "true"
+        },
+        "SqlServersDatabasesSessionsCountThreshold": {
+          "value": "0.5"
+        },
+        "SqlServersDatabasesSessionsCountPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersDatabasesSqlInstanceCpuPercentAlertSeverity": {
+          "value": "3"
+        },
+        "SqlServersDatabasesSqlInstanceCpuPercentWindowSize": {
+          "value": "PT15M"
+        },
+        "SqlServersDatabasesSqlInstanceCpuPercentFrequency": {
+          "value": "PT5M"
+        },
+        "SqlServersDatabasesSqlInstanceCpuPercentMitigate": {
+          "value": "true"
+        },
+        "SqlServersDatabasesSqlInstanceCpuPercentAlertState": {
+          "value": "true"
+        },
+        "SqlServersDatabasesSqlInstanceCpuPercentThreshold": {
+          "value": "70"
+        },
+        "SqlServersDatabasesSqlInstanceCpuPercentPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersDatabasesSqlInstanceMemoryPercentAlertSeverity": {
+          "value": "3"
+        },
+        "SqlServersDatabasesSqlInstanceMemoryPercentWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersDatabasesSqlInstanceMemoryPercentFrequency": {
+          "value": "PT5M"
+        },
+        "SqlServersDatabasesSqlInstanceMemoryPercentMitigate": {
+          "value": "true"
+        },
+        "SqlServersDatabasesSqlInstanceMemoryPercentAlertState": {
+          "value": "true"
+        },
+        "SqlServersDatabasesSqlInstanceMemoryPercentThreshold": {
+          "value": "90"
+        },
+        "SqlServersDatabasesSqlInstanceMemoryPercentPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersDatabasesStorageAlertSeverity": {
+          "value": "3"
+        },
+        "SqlServersDatabasesStorageWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersDatabasesStorageFrequency": {
+          "value": "PT5M"
+        },
+        "SqlServersDatabasesStorageMitigate": {
+          "value": "true"
+        },
+        "SqlServersDatabasesStorageAlertState": {
+          "value": "true"
+        },
+        "SqlServersDatabasesStorageThreshold": {
+          "value": "934584883610"
+        },
+        "SqlServersDatabasesStoragePolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersDatabasesTempDbDataSizeAlertSeverity": {
+          "value": "3"
+        },
+        "SqlServersDatabasesTempDbDataSizeWindowSize": {
+          "value": "PT15M"
+        },
+        "SqlServersDatabasesTempDbDataSizeFrequency": {
+          "value": "PT5M"
+        },
+        "SqlServersDatabasesTempDbDataSizeMitigate": {
+          "value": "true"
+        },
+        "SqlServersDatabasesTempDbDataSizeAlertState": {
+          "value": "true"
+        },
+        "SqlServersDatabasesTempDbDataSizeThreshold": {
+          "value": "80"
+        },
+        "SqlServersDatabasesTempDbDataSizePolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersElasticpoolsAllocatedDataStorageAlertSeverity": {
+          "value": "1"
+        },
+        "SqlServersElasticpoolsAllocatedDataStorageWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersElasticpoolsAllocatedDataStorageFrequency": {
+          "value": "PT1M"
+        },
+        "SqlServersElasticpoolsAllocatedDataStorageMitigate": {
+          "value": "true"
+        },
+        "SqlServersElasticpoolsAllocatedDataStorageAlertState": {
+          "value": "true"
+        },
+        "SqlServersElasticpoolsAllocatedDataStorageThreshold": {
+          "value": "225000000000"
+        },
+        "SqlServersElasticpoolsAllocatedDataStoragePolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersElasticpoolsAllocatedDataStoragePercentAlertSeverity": {
+          "value": "2"
+        },
+        "SqlServersElasticpoolsAllocatedDataStoragePercentWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersElasticpoolsAllocatedDataStoragePercentFrequency": {
+          "value": "PT1M"
+        },
+        "SqlServersElasticpoolsAllocatedDataStoragePercentMitigate": {
+          "value": "true"
+        },
+        "SqlServersElasticpoolsAllocatedDataStoragePercentAlertState": {
+          "value": "true"
+        },
+        "SqlServersElasticpoolsAllocatedDataStoragePercentThreshold": {
+          "value": "90"
+        },
+        "SqlServersElasticpoolsAllocatedDataStoragePercentPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersElasticpoolsCpuPercentAlertSeverity": {
+          "value": "3"
+        },
+        "SqlServersElasticpoolsCpuPercentWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersElasticpoolsCpuPercentFrequency": {
+          "value": "PT1M"
+        },
+        "SqlServersElasticpoolsCpuPercentMitigate": {
+          "value": "true"
+        },
+        "SqlServersElasticpoolsCpuPercentAlertState": {
+          "value": "true"
+        },
+        "SqlServersElasticpoolsCpuPercentThreshold": {
+          "value": "90"
+        },
+        "SqlServersElasticpoolsCpuPercentPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersElasticpoolsDtuConsumptionPercentAlertSeverity": {
+          "value": "3"
+        },
+        "SqlServersElasticpoolsDtuConsumptionPercentWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersElasticpoolsDtuConsumptionPercentFrequency": {
+          "value": "PT1M"
+        },
+        "SqlServersElasticpoolsDtuConsumptionPercentMitigate": {
+          "value": "true"
+        },
+        "SqlServersElasticpoolsDtuConsumptionPercentAlertState": {
+          "value": "true"
+        },
+        "SqlServersElasticpoolsDtuConsumptionPercentThreshold": {
+          "value": "90"
+        },
+        "SqlServersElasticpoolsDtuConsumptionPercentPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersElasticpoolseDtuUsedAlertSeverity": {
+          "value": "3"
+        },
+        "SqlServersElasticpoolseDtuUsedWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersElasticpoolseDtuUsedFrequency": {
+          "value": "PT1M"
+        },
+        "SqlServersElasticpoolseDtuUsedMitigate": {
+          "value": "true"
+        },
+        "SqlServersElasticpoolseDtuUsedAlertState": {
+          "value": "true"
+        },
+        "SqlServersElasticpoolseDtuUsedThreshold": {
+          "value": "80"
+        },
+        "SqlServersElasticpoolseDtuUsedPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersElasticpoolsLogWritePercentAlertSeverity": {
+          "value": "3"
+        },
+        "SqlServersElasticpoolsLogWritePercentWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersElasticpoolsLogWritePercentFrequency": {
+          "value": "PT5M"
+        },
+        "SqlServersElasticpoolsLogWritePercentMitigate": {
+          "value": "true"
+        },
+        "SqlServersElasticpoolsLogWritePercentAlertState": {
+          "value": "true"
+        },
+        "SqlServersElasticpoolsLogWritePercentThreshold": {
+          "value": "90"
+        },
+        "SqlServersElasticpoolsLogWritePercentPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersElasticpoolsPhysicalDataReadPercentAlertSeverity": {
+          "value": "3"
+        },
+        "SqlServersElasticpoolsPhysicalDataReadPercentWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersElasticpoolsPhysicalDataReadPercentFrequency": {
+          "value": "PT1M"
+        },
+        "SqlServersElasticpoolsPhysicalDataReadPercentMitigate": {
+          "value": "true"
+        },
+        "SqlServersElasticpoolsPhysicalDataReadPercentAlertState": {
+          "value": "true"
+        },
+        "SqlServersElasticpoolsPhysicalDataReadPercentThreshold": {
+          "value": "90"
+        },
+        "SqlServersElasticpoolsPhysicalDataReadPercentPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersElasticpoolsSessionsPercentAlertSeverity": {
+          "value": "3"
+        },
+        "SqlServersElasticpoolsSessionsPercentWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersElasticpoolsSessionsPercentFrequency": {
+          "value": "PT1M"
+        },
+        "SqlServersElasticpoolsSessionsPercentMitigate": {
+          "value": "true"
+        },
+        "SqlServersElasticpoolsSessionsPercentAlertState": {
+          "value": "true"
+        },
+        "SqlServersElasticpoolsSessionsPercentThreshold": {
+          "value": "90"
+        },
+        "SqlServersElasticpoolsSessionsPercentPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersElasticpoolsSqlServerProcessCorePercentAlertSeverity": {
+          "value": "2"
+        },
+        "SqlServersElasticpoolsSqlServerProcessCorePercentWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersElasticpoolsSqlServerProcessCorePercentFrequency": {
+          "value": "PT1M"
+        },
+        "SqlServersElasticpoolsSqlServerProcessCorePercentMitigate": {
+          "value": "true"
+        },
+        "SqlServersElasticpoolsSqlServerProcessCorePercentAlertState": {
+          "value": "true"
+        },
+        "SqlServersElasticpoolsSqlServerProcessCorePercentThreshold": {
+          "value": "95"
+        },
+        "SqlServersElasticpoolsSqlServerProcessCorePercentPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersElasticpoolsSqlServerProcessMemPercentAlertSeverity": {
+          "value": "2"
+        },
+        "SqlServersElasticpoolsSqlServerProcessMemPercentWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersElasticpoolsSqlServerProcessMemPercentFrequency": {
+          "value": "PT1M"
+        },
+        "SqlServersElasticpoolsSqlServerProcessMemPercentMitigate": {
+          "value": "true"
+        },
+        "SqlServersElasticpoolsSqlServerProcessMemPercentAlertState": {
+          "value": "true"
+        },
+        "SqlServersElasticpoolsSqlServerProcessMemPercentThreshold": {
+          "value": "90"
+        },
+        "SqlServersElasticpoolsSqlServerProcessMemPercentPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersElasticpoolsStoragePercentAlertSeverity": {
+          "value": "3"
+        },
+        "SqlServersElasticpoolsStoragePercentWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersElasticpoolsStoragePercentFrequency": {
+          "value": "PT1M"
+        },
+        "SqlServersElasticpoolsStoragePercentMitigate": {
+          "value": "true"
+        },
+        "SqlServersElasticpoolsStoragePercentAlertState": {
+          "value": "true"
+        },
+        "SqlServersElasticpoolsStoragePercentThreshold": {
+          "value": "90"
+        },
+        "SqlServersElasticpoolsStoragePercentPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersElasticpoolsTempDbLogUsedPercentAlertSeverity": {
+          "value": "3"
+        },
+        "SqlServersElasticpoolsTempDbLogUsedPercentWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersElasticpoolsTempDbLogUsedPercentFrequency": {
+          "value": "PT5M"
+        },
+        "SqlServersElasticpoolsTempDbLogUsedPercentMitigate": {
+          "value": "true"
+        },
+        "SqlServersElasticpoolsTempDbLogUsedPercentAlertState": {
+          "value": "true"
+        },
+        "SqlServersElasticpoolsTempDbLogUsedPercentThreshold": {
+          "value": "80"
+        },
+        "SqlServersElasticpoolsTempDbLogUsedPercentPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersElasticpoolsWorkersPercentAlertSeverity": {
+          "value": "3"
+        },
+        "SqlServersElasticpoolsWorkersPercentWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersElasticpoolsWorkersPercentFrequency": {
+          "value": "PT1M"
+        },
+        "SqlServersElasticpoolsWorkersPercentMitigate": {
+          "value": "true"
+        },
+        "SqlServersElasticpoolsWorkersPercentAlertState": {
+          "value": "true"
+        },
+        "SqlServersElasticpoolsWorkersPercentThreshold": {
+          "value": "90"
+        },
+        "SqlServersElasticpoolsWorkersPercentPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlServersElasticpoolsXtpStoragePercentAlertSeverity": {
+          "value": "3"
+        },
+        "SqlServersElasticpoolsXtpStoragePercentWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlServersElasticpoolsXtpStoragePercentFrequency": {
+          "value": "PT5M"
+        },
+        "SqlServersElasticpoolsXtpStoragePercentMitigate": {
+          "value": "true"
+        },
+        "SqlServersElasticpoolsXtpStoragePercentAlertState": {
+          "value": "true"
+        },
+        "SqlServersElasticpoolsXtpStoragePercentThreshold": {
+          "value": "80"
+        },
+        "SqlServersElasticpoolsXtpStoragePercentPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlManagedInstancesAvgCpuPercentAlertSeverity": {
+          "value": "2"
+        },
+        "SqlManagedInstancesAvgCpuPercentWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlManagedInstancesAvgCpuPercentMitigate": {
+          "value": "true"
+        },
+        "SqlManagedInstancesAvgCpuPercentFrequency": {
+          "value": "PT1M"
+        },
+        "SqlManagedInstancesAvgCpuPercentPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlManagedInstancesAvgCpuPercentAlertState": {
+          "value": "true"
+        },
+        "SqlManagedInstancesAvgCpuPercentThreshold": {
+          "value": "80"
+        },
+        "SqlManagedInstancesStorageSpaceUsedMbAlertSeverity": {
+          "value": "3"
+        },
+        "SqlManagedInstancesStorageSpaceUsedMbWindowSize": {
+          "value": "PT5M"
+        },
+        "SqlManagedInstancesStorageSpaceUsedMbMitigate": {
+          "value": "true"
+        },
+        "SqlManagedInstancesStorageSpaceUsedMbFrequency": {
+          "value": "PT1M"
+        },
+        "SqlManagedInstancesStorageSpaceUsedMbPolicyEffect": {
+          "value": "deployIfNotExists"
+        },
+        "SqlManagedInstancesStorageSpaceUsedMbAlertState": {
+          "value": "true"
+        },
+        "SqlManagedInstancesStorageSpaceUsedMbThreshold": {
+          "value": "80"
+        }
+      }
     }
   }
 }
