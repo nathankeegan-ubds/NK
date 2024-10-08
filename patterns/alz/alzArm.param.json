@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "enterpriseScaleCompanyPrefix": {
-      "value": "ALZ-RCo"
+      "value": "SQL-MG-test-001"
     },
     "platformManagementGroup": {
       "value": "ALZ-RCo-Platform"
@@ -36,7 +36,7 @@
       "value": "Yes"
     },
     "enableAMBAHybridVM": {
-      "value": "Yes"
+      "value": "No"
     },
     "enableAMBASQL": {
       "value": "Yes"
